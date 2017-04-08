@@ -1,0 +1,6 @@
+language: php
+sudo: false
+php:
+    - 7.0
+before_install: "composer install"
+script: "vendor/bin/phpunit"
