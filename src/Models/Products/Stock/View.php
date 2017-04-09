@@ -35,6 +35,24 @@ class View
     }
 
     /**
+     * get products stock quantity
+     * @return float
+     */
+    public function getQty(): float
+    {
+        return $this->getStockItemObject()->getQty();
+    }
+
+    /**
+     * get the quantity increments for customer selecting quantity
+     * @return int
+     */
+    public function getQtyIncrements(): int
+    {
+        return max(1, $this->getStockItemObject()->getQtyIncrements());
+    }
+
+    /**
      * Is this product in stock
      * @return bool
      */
@@ -64,6 +82,7 @@ class View
     }
 
     /**
+     * Is the product using stock management
      * @return bool
      */
     public function isManageStock():bool
@@ -74,6 +93,7 @@ class View
     }
 
     /**
+     * Is the product alloweing backorders
      * @return bool
      */
     public function isAllowBackorders():bool
@@ -84,6 +104,7 @@ class View
     }
 
     /**
+     * Does the product have a minimal sales quantity
      * @return int
      */
     public function hasMinimalSalesQty():int
