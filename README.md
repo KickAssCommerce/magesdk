@@ -1,4 +1,4 @@
-#MageSDK
+# MageSDK
 
 A PHP wrapper for the Magento 2 APIs offering ease of use for retrieving and setting data.
 
