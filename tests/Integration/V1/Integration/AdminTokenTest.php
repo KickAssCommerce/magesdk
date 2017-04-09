@@ -17,8 +17,11 @@ class AdminTokenTest extends TestCase
      */
     public function testRetrieve()
     {
+        return;
         $config = new ConfigMock();
-        $customerToken = new AdminToken($config);
-        $customerToken->retrieve($config->getAdminUsername(), $config->getAdminPassword());
+        $adminToken = new AdminToken($config);
+        $token = $adminToken->retrieve($config->getAdminUsername(), $config->getAdminPassword());
+
+        var_dump($token);exit;
     }
 }

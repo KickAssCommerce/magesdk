@@ -119,8 +119,9 @@ class Client
      */
     public function prepareHeaders():array
     {
+        $config = new Config();
         $headers = array_merge([
-            //'Authorization' => 'Bearer {{token}}',
+            'Authorization' => "Bearer {$config->getApiToken()}",
             'Content-Type' => 'application/json'
         ], $this->headers);
 

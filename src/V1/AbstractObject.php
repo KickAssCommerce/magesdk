@@ -21,7 +21,7 @@ abstract class AbstractObject
      */
     public function getExtensionAttributes(): array
     {
-        return $this->extensionAttributes;
+        return (array)$this->extensionAttributes;
     }
 
 }

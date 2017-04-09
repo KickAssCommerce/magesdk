@@ -26,4 +26,13 @@ class ConfigMock implements ConfigInterface
     {
         return 'https://httpbin.org/';
     }
+
+    /**
+     * retrieve the configured API admin or customer token
+     * @return string
+     */
+    public function getApiToken():string
+    {
+        return '';
+    }
 }

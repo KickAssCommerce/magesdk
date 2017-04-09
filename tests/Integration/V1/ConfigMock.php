@@ -48,4 +48,13 @@ class ConfigMock implements ConfigInterface
     {
         return getenv('MAGENTO_ADMIN_PASSW');
     }
+
+    /**
+     * retrieve the configured API admin or customer token
+     * @return string
+     */
+    public function getApiToken():string
+    {
+        return getenv('API_TOKEN');
+    }
 }

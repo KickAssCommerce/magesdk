@@ -14,4 +14,9 @@ interface ConfigInterface
      * @return string
      */
     public function getBaseUrl():string;
+    /**
+     * retrieve the configured API admin or customer token
+     * @return string
+     */
+    public function getApiToken():string;
 }

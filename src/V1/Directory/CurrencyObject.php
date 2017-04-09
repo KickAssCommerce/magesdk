@@ -5,7 +5,7 @@ namespace Sandermangel\MageSDK\V1\Directory;
 use Sandermangel\MageSDK\V1\AbstractObject;
 
 /**
- * Magento V1 directoryCountryInformationAcquirer API currency object
+ * Magento V1 directoryCurrencyInformationAcquirerV1 API currency object
  *
  * @package Sandermangel\MageSDK
  */

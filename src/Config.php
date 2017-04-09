@@ -19,7 +19,7 @@ class Config implements ConfigInterface
      *
      * @param string $path
      */
-    public function __construct($path = __DIR__ . '/../../')
+    public function __construct($path = __DIR__ . '/../')
     {
         $env = new Dotenv($path);
         $env->load();
@@ -43,5 +43,14 @@ class Config implements ConfigInterface
     public function getBaseUrl():string
     {
         return $this->getValue('API_BASE_URL');
+    }
+
+    /**
+     * retrieve the configured API admin or customer token
+     * @return string
+     */
+    public function getApiToken():string
+    {
+        return $this->getValue('API_TOKEN');
     }
 }
