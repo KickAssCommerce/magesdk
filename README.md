@@ -17,6 +17,8 @@ Use the `vendor/bin/magesdk token:admin` tool to create the required API tokens
 
 ## Architecture
 Sounds a lot more fancy than it is but the basic idea is you have API classes, Object classes and Models.
+API files located in `src/V1` follow the same directory structure as the API url itself.
+
 - Models are what you want to use in your projects. The idea is to keep them stable between versions.
 - Object classes offer an easy way to explore what data is (or should be) in a certain entity.
 - API classes do the actual communication with the API via the Api\Client library
@@ -33,7 +35,9 @@ Use the tagged versions in the repo. They should reflect the compatible Magento 
 ## Testing
 
 ### Integration testing
-All integration tests were written on a Magento 2 instance with unmodified sample data.
+All integration tests were written on a Magento 2 instance with unmodified sample data. 
+The ClientTest uses httpbin.org to test itself, for the other tests using Magento 2 I recommend using
+a local M2 install
 
 ## Contributing
 
