@@ -19,7 +19,7 @@ class Countries extends AbstractEndpoint
         $client = new Client($this->getConfig(), 'GET', $this->getPath(), [], []);
         $response = $client->executeCall();
 
-        return array_map(function($data) {
+        return array_map(function ($data) {
             return new CountryObject($data);
         }, $response['body']);
     }

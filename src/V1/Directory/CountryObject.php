@@ -33,7 +33,7 @@ class CountryObject extends AbstractObject
         $this->regions = $apiData->available_regions ?? [] ;
         $this->extensionAttributes = $apiData->extension_attributes ?? [] ;
 
-        $this->regions = array_map(function($data) {
+        $this->regions = array_map(function ($data) {
             return new RegionObject($data);
         }, $this->regions);
     }

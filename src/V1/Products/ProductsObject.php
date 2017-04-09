@@ -30,7 +30,7 @@ class ProductsObject extends AbstractObject
         $this->updated_at = (string)$apiData->updated_at;
         $this->weight = $apiData->weight ?? 0;
 
-        if (isset($apiData->extension_attributes )) {
+        if (isset($apiData->extension_attributes)) {
             $this->stock_item = new StockItemObject($apiData->extension_attributes->stock_item);
             $this->bundle_product_options = $apiData->extension_attributes->bundle_product_options ?? [];
             $this->downloadable_product_links = $apiData->extension_attributes->downloadable_product_links ?? [];

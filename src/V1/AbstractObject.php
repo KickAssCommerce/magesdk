@@ -23,5 +23,4 @@ abstract class AbstractObject
     {
         return (array)$this->extensionAttributes;
     }
-
 }

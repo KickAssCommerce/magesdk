@@ -1,6 +1,7 @@
 <?php
 
 namespace Sandermangel\MageSDK\Api;
+
 use Sandermangel\MageSDK\Config;
 use Sandermangel\MageSDK\ConfigInterface;
 use Sandermangel\MageSDK\Api\ApiException;
@@ -100,7 +101,7 @@ class Client
                 'body' => json_decode($responseBody),
                 'httpcode' => $responseInfo['http_code']
             ];
-        }else if ($responseInfo['http_code'] === 401) {
+        } elseif ($responseInfo['http_code'] === 401) {
             $body = json_decode($responseBody);
             throw new ApiException($body->message);
         } else {

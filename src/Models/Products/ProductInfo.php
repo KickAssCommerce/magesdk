@@ -31,6 +31,4 @@ class ProductInfo
     {
         return $this->productsObject;
     }
-
-
 }

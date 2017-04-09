@@ -1,6 +1,7 @@
 <?php
 
 namespace Sandermangel\MageSDK\V1;
+
 use Sandermangel\MageSDK\ConfigInterface;
 
 /**

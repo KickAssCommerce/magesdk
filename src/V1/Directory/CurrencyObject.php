@@ -33,7 +33,7 @@ class CurrencyObject extends AbstractObject
         $this->exchangeRates = (array)$apiData->exchange_rates;
         $this->extensionAttributes = $apiData->extension_attributes ?? [] ;
 
-        $this->exchangeRates = array_map(function($data) {
+        $this->exchangeRates = array_map(function ($data) {
             return new ExchangeRateObject($data);
         }, $this->exchangeRates);
     }
