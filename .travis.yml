@@ -1,6 +1,6 @@
 language: php
-sudo: false
 php:
-    - 7.0
+  - '7.0'
+  - '7.1'
 before_install: "composer install"
-script: "vendor/bin/phpunit"
+script: "vendor/bin/phpunit --testsuite Unit"
