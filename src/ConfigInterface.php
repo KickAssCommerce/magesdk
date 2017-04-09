@@ -14,12 +14,4 @@ interface ConfigInterface
      * @return string
      */
     public function getBaseUrl():string;
-
-    /**
-     * getValue returns the value of a config value by key
-     *
-     * @param string $key
-     * @return string|null
-     */
-    public function getValue(string $key):string;
 }

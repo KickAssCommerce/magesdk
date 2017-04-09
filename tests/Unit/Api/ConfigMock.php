@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\MageSDK;
+namespace Tests\MageSDK\Api;
 use Dotenv\Dotenv;
 use Sandermangel\MageSDK\ConfigInterface;
 
@@ -16,19 +16,6 @@ class ConfigMock implements ConfigInterface
      */
     public function __construct()
     {
-        $env = new Dotenv(__DIR__ . '/');
-        $env->load();
-    }
-
-    /**
-     * getValue returns the value of a config value by key
-     *
-     * @param string $key
-     * @return string|null
-     */
-    public function getValue(string $key):string
-    {
-        return getenv($key);
     }
 
     /**
@@ -37,6 +24,6 @@ class ConfigMock implements ConfigInterface
      */
     public function getBaseUrl():string
     {
-        return $this->getValue('API_BASE_URL');
+        return 'https://httpbin.org/';
     }
 }

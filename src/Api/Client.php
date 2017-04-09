@@ -42,11 +42,11 @@ class Client
      * @param ConfigInterface $config
      * @param string $method Either GET, POST, DELETE or PUT
      * @param string $path Path postfixed to base url
-     * @param array $data Data parsed to API
+     * @param array|string $data Data parsed to API
      * @param array $headers associative array with $headerName => $headerValue
      * @throws ApiException
      */
-    public function __construct(ConfigInterface $config, string $method, string $path, array $data, array $headers)
+    public function __construct(ConfigInterface $config, string $method, string $path, $data, array $headers)
     {
         $this->method = strtoupper($method);
         $this->path = $path;
@@ -77,6 +77,7 @@ class Client
 
         if ($this->method === 'GET') {
             $endpointUrl .= '?' . $data;
+            $endpointUrl = trim($endpointUrl, '?');
         } elseif ($this->method === 'POST') {
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
@@ -99,6 +100,9 @@ class Client
                 'body' => json_decode($responseBody),
                 'httpcode' => $responseInfo['http_code']
             ];
+        }else if ($responseInfo['http_code'] === 401) {
+            $body = json_decode($responseBody);
+            throw new ApiException($body->message);
         } else {
             throw new ApiException("{$endpointUrl} replied with status code {$responseInfo['http_code']}, error: {$responseError}, body: {$responseBody}");
         }
@@ -116,9 +120,8 @@ class Client
     public function prepareHeaders():array
     {
         $headers = array_merge([
-            'Authorization' => 'Bearer {{token}}',
-            'Accept' => 'JSON',
-            'Content-Type' => 'application/JSON'
+            //'Authorization' => 'Bearer {{token}}',
+            'Content-Type' => 'application/json'
         ], $this->headers);
 
         $headerParams = [];
@@ -144,6 +147,6 @@ class Client
      */
     public function getPreparedQueryString():string
     {
-        return http_build_query($this->data, '', '&');
+        return is_array($this->data) ? http_build_query($this->data, '', '&') : $this->data ;
     }
 }
