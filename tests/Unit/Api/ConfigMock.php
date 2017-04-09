@@ -35,4 +35,13 @@ class ConfigMock implements ConfigInterface
     {
         return '';
     }
+
+    /**
+     * retrieve the configured API store code to use
+     * @return string
+     */
+    public function getApiStoreCode():string
+    {
+        return 'default';
+    }
 }

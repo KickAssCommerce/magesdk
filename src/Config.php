@@ -53,4 +53,13 @@ class Config implements ConfigInterface
     {
         return $this->getValue('API_TOKEN');
     }
+
+    /**
+     * retrieve the configured API store code to use
+     * @return string
+     */
+    public function getApiStoreCode():string
+    {
+        return $this->getValue('API_STORE_CODE');
+    }
 }

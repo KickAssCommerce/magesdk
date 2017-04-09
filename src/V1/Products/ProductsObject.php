@@ -12,6 +12,11 @@ use Sandermangel\MageSDK\V1\AbstractObject;
 class ProductsObject extends AbstractObject
 {
     /**
+     * @var StockItemObject
+     */
+    protected $stock_item;
+
+    /**
      * Converts V1 api data into a structured object
      *
      * @param \stdClass $apiData
@@ -30,22 +35,28 @@ class ProductsObject extends AbstractObject
         $this->updated_at = (string)$apiData->updated_at;
         $this->weight = $apiData->weight ?? 0;
 
-        if (isset($apiData->extension_attributes)) {
-            $this->stock_item = new StockItemObject($apiData->extension_attributes->stock_item);
-            $this->bundle_product_options = $apiData->extension_attributes->bundle_product_options ?? [];
-            $this->downloadable_product_links = $apiData->extension_attributes->downloadable_product_links ?? [];
-            $this->downloadable_product_samples = $apiData->extension_attributes->downloadable_product_samples ?? [];
-            $this->giftcard_amounts = $apiData->extension_attributes->giftcard_amounts ?? [];
-            $this->configurable_product_options = $apiData->extension_attributes->configurable_product_options ?? [];
+        $this->stock_item = new StockItemObject($apiData->extension_attributes->stock_item);
+        $this->bundle_product_options = $apiData->extension_attributes->bundle_product_options ?? [];
+        $this->downloadable_product_links = $apiData->extension_attributes->downloadable_product_links ?? [];
+        $this->downloadable_product_samples = $apiData->extension_attributes->downloadable_product_samples ?? [];
+        $this->giftcard_amounts = $apiData->extension_attributes->giftcard_amounts ?? [];
+        $this->configurable_product_options = $apiData->extension_attributes->configurable_product_options ?? [];
 
-            $this->extension_attributes = $apiData->extension_attributes;
-        }
+        $this->extension_attributes = $apiData->extension_attributes;
 
         $this->product_links = (array)$apiData->product_links;
         $this->options = (array)$apiData->options;
         $this->media_gallery_entries = (array)$apiData->media_gallery_entries;
         $this->tier_prices = (array)$apiData->tier_prices;
         $this->custom_attributes = (array)$apiData->custom_attributes;
+    }
+
+    /**
+     * @return StockItemObject
+     */
+    public function getStockItem(): StockItemObject
+    {
+        return $this->stock_item;
     }
 }
 /**

@@ -32,29 +32,20 @@ class ConfigMock implements ConfigInterface
     }
 
     /**
-     * retrieve the Magento instance username
-     * @return string
-     */
-    public function getAdminUsername():string
-    {
-        return getenv('MAGENTO_ADMIN_USER');
-    }
-
-    /**
-     * retrieve the Magento instance password
-     * @return string
-     */
-    public function getAdminPassword():string
-    {
-        return getenv('MAGENTO_ADMIN_PASSW');
-    }
-
-    /**
      * retrieve the configured API admin or customer token
      * @return string
      */
     public function getApiToken():string
     {
         return getenv('API_TOKEN');
+    }
+
+    /**
+     * retrieve the configured API store code to use
+     * @return string
+     */
+    public function getApiStoreCode():string
+    {
+        return getenv('API_STORE_CODE');
     }
 }

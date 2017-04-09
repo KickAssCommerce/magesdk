@@ -19,4 +19,9 @@ interface ConfigInterface
      * @return string
      */
     public function getApiToken():string;
+    /**
+     * retrieve the configured API store code to use
+     * @return string
+     */
+    public function getApiStoreCode():string;
 }
