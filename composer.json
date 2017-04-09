@@ -28,5 +28,8 @@
         "Tests\\MageSDK\\": "tests/Unit/",
         "Integrations\\MageSDK\\": "tests/Integration/"
       }
-    }
+    },
+    "bin": [
+      "src/magesdk"
+    ]
 }

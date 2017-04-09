@@ -1,0 +1,66 @@
+#!/usr/bin/env php
+<?php
+
+foreach ([__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php'] as $file) {
+    if (file_exists($file)) {
+        require $file;
+        break;
+    }
+}
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Sandermangel\MageSDK\Config;
+use Sandermangel\MageSDK\V1\Integration\AdminToken;
+use Sandermangel\MageSDK\V1\Integration\CustomerToken;
+
+$console = new Application();
+
+$console->register('token:admin')
+    ->setDefinition(array(
+        new InputArgument('username', InputArgument::REQUIRED, 'Your Magento 2 admin username'),
+        new InputArgument('password', InputArgument::REQUIRED, 'Your Magento 2 admin password'),
+    ))
+    ->setDescription('Create an admin token')
+    ->setHelp('
+The <info>token:admin</info> command will create a token for an 
+admin user in the connected Magento Instance.
+
+Save this token in your .env
+')
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+        $username = $input->getArgument('username');
+        $password = $input->getArgument('password');
+
+        $adminToken = new AdminToken(new Config());
+        $token = $adminToken->retrieve($username, $password);
+
+        $output->writeln('Your admin user API token: '.$token);
+    });
+
+$console->register('token:customer')
+    ->setDefinition(array(
+        new InputArgument('email', InputArgument::REQUIRED, 'Your Magento 2 customer emailaddress'),
+        new InputArgument('password', InputArgument::REQUIRED, 'Your Magento 2 username password'),
+    ))
+    ->setDescription('Create a customer token')
+    ->setHelp('
+The <info>token:customer</info> command will create a token for a
+customer in the connected Magento Instance.
+
+Save this token in your .env
+')
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+        $username = $input->getArgument('email');
+        $password = $input->getArgument('password');
+
+        $adminToken = new CustomerToken(new Config());
+        $token = $adminToken->retrieve($username, $password);
+
+        $output->writeln('Your customer user API token: '.$token);
+    });
+
+$console->run();
