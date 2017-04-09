@@ -105,7 +105,9 @@ class Client
             $body = json_decode($responseBody);
             throw new ApiException($body->message);
         } else {
-            throw new ApiException("{$endpointUrl} replied with status code {$responseInfo['http_code']}, error: {$responseError}, body: {$responseBody}");
+            throw new ApiException("{$endpointUrl} replied with".
+                "status code {$responseInfo['http_code']}".
+                ", error: {$responseError}, body: {$responseBody}");
         }
     }
 
