@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\MageSDK\Api;
-use Dotenv\Dotenv;
+
 use Sandermangel\MageSDK\ConfigInterface;
 
 /**

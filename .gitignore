@@ -1,3 +1,4 @@
 /vendor/
 /schema.json
 .env
+!tests/Unit/.env
