@@ -3,7 +3,6 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\V1\Directory\RegionObject;
 use Sandermangel\MageSDK\V1\Products\StockItemObject;
 
 /**

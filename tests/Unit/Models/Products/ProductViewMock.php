@@ -1,17 +1,14 @@
 <?php
 
-namespace Sandermangel\MageSDK\Models\Products;
+namespace Tests\MageSDK\Models\Products;
 
 use Sandermangel\MageSDK\ConfigInterface;
-use Sandermangel\MageSDK\V1\Products;
-use Sandermangel\MageSDK\V1\Products\ProductsObject;
 use Sandermangel\MageSDK\Models\Products\Stock\View as StockView;
+use Sandermangel\MageSDK\Models\Products\ViewInterface;
+use Sandermangel\MageSDK\V1\Products\ProductsObject;
 
-class View implements ViewInterface
+class ProductViewMock implements ViewInterface
 {
-    protected $productsObject;
-    protected $stockModel;
-    protected $config;
 
     /**
      * ProductInfo constructor.
@@ -21,12 +18,7 @@ class View implements ViewInterface
      */
     public function __construct(string $sku, int $storeId, ConfigInterface $config)
     {
-        $this->config = $config;
 
-        $productApi = new Products($this->config);
-        $this->productsObject = $productApi->getBySku($sku);
-
-        $this->stockModel = new StockView($this, $storeId, $this->config);
     }
 
     /**
@@ -34,7 +26,7 @@ class View implements ViewInterface
      */
     public function getProductsObject(): ProductsObject
     {
-        return $this->productsObject;
+        // TODO: Implement getProductsObject() method.
     }
 
     /**
@@ -42,6 +34,6 @@ class View implements ViewInterface
      */
     public function getStockModel(): StockView
     {
-        return $this->stockModel;
+        // TODO: Implement getStockModel() method.
     }
 }

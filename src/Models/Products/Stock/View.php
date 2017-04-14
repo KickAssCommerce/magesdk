@@ -5,7 +5,7 @@ namespace Sandermangel\MageSDK\Models\Products\Stock;
 use Sandermangel\MageSDK\ConfigInterface;
 use Sandermangel\MageSDK\Models\Store;
 use Sandermangel\MageSDK\V1\Products\StockItemObject;
-use Sandermangel\MageSDK\Models\Products\View as ProductView;
+use Sandermangel\MageSDK\Models\Products\ViewInterface as ProductViewInterface;
 use Sandermangel\MageSDK\V1\Store\Config as StoreConfig;
 
 class View
@@ -14,13 +14,14 @@ class View
     protected $config;
 
     /**
-     * ProductInfo constructor.
-     * @param ProductView $product
+     * Stock view constructor.
+     * @param ProductViewInterface $product
      * @param int $storeId
      * @param ConfigInterface $config
      */
-    public function __construct(ProductView $product, int $storeId, ConfigInterface $config)
+    public function __construct(ProductViewInterface $product, int $storeId, ConfigInterface $config)
     {
+        // @todo build in check that retrieves Stock data via API when stock is not available in Product object
         $this->stockItemObject = $product->getProductsObject()->getStockItem();
         $this->config = $config;
         $this->store = new Store($this->config->getApiStoreCode(), new StoreConfig($this->config));
@@ -70,7 +71,7 @@ class View
 
         $qtyAvailable = $stockObject->getQty(); // how many items do we actually have
 
-        if ($qtyAvailable <= (int)$this->isAllowBackorders() * -1) { // qty is lower than 0 or the allowed nr of backorders
+        if ($qtyAvailable <= 0 || false === (bool)$this->isAllowBackorders()) { // qty is lower than 0 or the allowed nr of backorders
             return false;
         }
 
@@ -111,6 +112,6 @@ class View
     {
         return ($this->getStockItemObject()->isUseConfigMinSaleQty()) ?
             false : // @todo add call to core_config_data value via StoreModel API
-            $this->getStockItemObject()->getMaxSaleQty();
+            $this->getStockItemObject()->getMinSaleQty();
     }
 }
