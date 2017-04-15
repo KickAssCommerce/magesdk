@@ -16,7 +16,10 @@ class ClientTest extends TestCase
 
     public function setUp()
     {
-        $this->config = $this->createMock(Config::class);
+        $this->config = $this->getMockBuilder(Config::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $this->config->method('getApiToken')
             ->willReturn('abcdefg');
         $this->config->method('getBaseUrl')

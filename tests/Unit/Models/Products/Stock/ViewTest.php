@@ -20,7 +20,9 @@ class ViewTest extends TestCase
 
     public function setUp()
     {
-        $config = $this->createMock(Config::class);
+        $config = $this->getMockBuilder(Config::class)
+            ->disableOriginalConstructor()
+            ->getMock();
         $config->method('getApiToken')
             ->willReturn('abcdefg');
         $config->method('getBaseUrl')
