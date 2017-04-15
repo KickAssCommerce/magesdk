@@ -7,7 +7,6 @@
  */
 namespace KickAss\MageSDK\V1\Products;
 
-
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
  *
