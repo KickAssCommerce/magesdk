@@ -1,5 +1,7 @@
 # MageSDK
 
+[![Build Status](https://travis-ci.org/KickAssCommerce/magesdk.svg?branch=master)](https://travis-ci.org/KickAssCommerce/magesdk)
+
 A PHP wrapper for the Magento 2 APIs offering ease of use for retrieving and setting data.
 
 PLEASE NOTE: for now this project is alpha stability, breaking changes might be made in the near future.
