@@ -2,10 +2,10 @@
 
 namespace Tests\MageSDK\Models\Products\Stock;
 
+use KickAss\MageSDK\Config;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Products\Stock\View as StockView;
 use KickAss\MageSDK\V1\Products\StockItemObject;
-use Tests\MageSDK\Api\ConfigMock;
 use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**
@@ -20,10 +20,16 @@ class ViewTest extends TestCase
 
     public function setUp()
     {
-        $configMock = new ConfigMock();
+        $config = $this->createMock(Config::class);
+        $config->method('getApiToken')
+            ->willReturn('abcdefg');
+        $config->method('getBaseUrl')
+            ->willReturn('http://127.0.0.1/');
+        $config->method('getApiStoreCode')
+            ->willReturn('default');
 
         $stockData = new ProductApiMock();
-        $this->stockModel = new StockView(new StockItemObject($stockData->extension_attributes->stock_item), 0, $configMock);
+        $this->stockModel = new StockView(new StockItemObject($stockData->extension_attributes->stock_item), 0, $config);
     }
 
     /**

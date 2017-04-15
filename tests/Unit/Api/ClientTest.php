@@ -2,6 +2,7 @@
 
 namespace Tests\MageSDK\Api;
 
+use KickAss\MageSDK\Config;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\API\ApiException;
 use KickAss\MageSDK\Api\Client;
@@ -11,6 +12,18 @@ use KickAss\MageSDK\Api\Client;
  */
 class ClientTest extends TestCase
 {
+    protected $config;
+
+    public function setUp()
+    {
+        $this->config = $this->createMock(Config::class);
+        $this->config->method('getApiToken')
+            ->willReturn('abcdefg');
+        $this->config->method('getBaseUrl')
+            ->willReturn('http://127.0.0.1/');
+        $this->config->method('getApiStoreCode')
+            ->willReturn('default');
+    }
 
     /**
      * @covers \KickAss\MageSDK\API\Client::__construct()
@@ -20,7 +33,7 @@ class ClientTest extends TestCase
         // testing errors thrown on incorrect headers
         $incorrectMethod = '';
         try {
-            $client = new Client(new ConfigMock(), 'INCORRECT HEADER', 'testendpoint', [], []);
+            $client = new Client($this->config, 'INCORRECT HEADER', 'testendpoint', [], []);
         } catch(ApiException $error) {
             $incorrectMethod = $error->getMessage();
         }
@@ -30,7 +43,7 @@ class ClientTest extends TestCase
         // testing that method is capitalized, so accepting get instead of GET
         $typeSensitiveMethod = '';
         try {
-            $client = new Client(new ConfigMock(), 'get', 'testendpoint', [], []);
+            $client = new Client($this->config, 'get', 'testendpoint', [], []);
         } catch(ApiException $error) {
             $typeSensitiveMethod = $error->getMessage();
         }
@@ -43,7 +56,7 @@ class ClientTest extends TestCase
      */
     public function testPrepareHeaders()
     {
-        $client = new Client(new ConfigMock(), 'GET', 'testendpoint', [], [
+        $client = new Client($this->config, 'GET', 'testendpoint', [], [
             'x-test-header' => 'testvalue'
         ]);
 
@@ -59,9 +72,9 @@ class ClientTest extends TestCase
      */
     public function testGetApiEndpoint()
     {
-        $client = new Client(new ConfigMock(), 'GET', '/get/', [], []);
+        $client = new Client($this->config, 'GET', '/get/', [], []);
 
-        $this->assertEquals('https://httpbin.org/get/', $client->getApiEndpoint());
+        $this->assertEquals('http://127.0.0.1/get/', $client->getApiEndpoint());
     }
 
     /**
@@ -69,7 +82,7 @@ class ClientTest extends TestCase
      */
     public function testGetPreparedQueryString()
     {
-        $client = new Client(new ConfigMock(), 'GET', '', [
+        $client = new Client($this->config, 'GET', '', [
             'testkey' => 'testvariable',
             'testassockey' => [
                 'testmultikey' => 'testmultivalue'

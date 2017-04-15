@@ -2,11 +2,11 @@
 
 namespace Tests\MageSDK\Models\Products;
 
+use KickAss\MageSDK\Config;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Products\View as ProductsView;
 use KickAss\MageSDK\V1\Products;
 use KickAss\MageSDK\V1\Products\ProductsObject;
-use Tests\MageSDK\Api\ConfigMock;
 use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**
@@ -21,14 +21,21 @@ class ViewTest extends TestCase
 
     public function setUp()
     {
-        $configMock = new ConfigMock();
+        $config = $this->createMock(Config::class);
+        $config->method('getApiToken')
+            ->willReturn('abcdefg');
+        $config->method('getBaseUrl')
+            ->willReturn('http://127.0.0.1/');
+        $config->method('getApiStoreCode')
+            ->willReturn('default');
+        
         $productApiData = new ProductApiMock();
 
         $productApi = $this->createMock(Products::class);
         $productApi->method('getBySku')
             ->willReturn(new ProductsObject($productApiData));
 
-        $this->productView = new ProductsView('24-MB01', 0, $productApi, $configMock);
+        $this->productView = new ProductsView('24-MB01', 0, $productApi, $config);
     }
 
     /**
