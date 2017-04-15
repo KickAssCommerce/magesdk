@@ -26,5 +26,5 @@ interface ProductsInterface
      * @return ProductsObjectInterface
      * @throws ApiException
      */
-    public function getBySku(string $sku, $storeId = 0, $editMode = false, $forceReload = false) : ProductsObjectInterface;
+    public function getBySku(string $sku, int $storeId, bool $editMode, bool $forceReload): ProductsObjectInterface;
 }
