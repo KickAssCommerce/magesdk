@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\MageSDK\Api;
+namespace Tests\MageSDK\V1\Products;
 
 use PHPUnit\Framework\TestCase;
 use Sandermangel\MageSDK\V1\Products\StockItemObject;
@@ -17,36 +17,9 @@ class StockItemObjectTest extends TestCase
 
     public function setUp()
     {
-        $data = new \stdClass();
-        $data->item_id = 3;
-        $data->product_id = 2;
-        $data->stock_id = 1;
-        $data->qty = 5;
-        $data->is_in_stock = true;
-        $data->is_qty_decimal = true;
-        $data->show_default_notification_message = true;
-        $data->use_config_min_qty = true;
-        $data->min_qty = 2;
-        $data->use_config_min_sale_qty = 0;
-        $data->min_sale_qty = 2;
-        $data->use_config_max_sale_qty = true;
-        $data->max_sale_qty = 10;
-        $data->use_config_backorders = true;
-        $data->backorders = 0;
-        $data->use_config_notify_stock_qty = true;
-        $data->notify_stock_qty = 0;
-        $data->use_config_qty_increments = true;
-        $data->qty_increments = 2;
-        $data->use_config_enable_qty_inc = true;
-        $data->enable_qty_increments = true;
-        $data->use_config_manage_stock = true;
-        $data->manage_stock = true;
-        $data->low_stock_date = (New \DateTime('now'))->format('Y-m-d');
-        $data->is_decimal_divided = true;
-        $data->stock_status_changed_auto = 0;
-        $data->extension_attributes = [];
+        $product = new ProductApiMock();
 
-        $this->stock = new StockItemObject($data);
+        $this->stock = new StockItemObject($product->extension_attributes->stock_item);
     }
 
     /**

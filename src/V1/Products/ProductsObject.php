@@ -2,18 +2,17 @@
 
 namespace Sandermangel\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\AbstractObject;
+use Sandermangel\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
  *
  * @package Sandermangel\MageSDK
  */
-class ProductsObject extends AbstractObject
+class ProductsObject implements ProductsObjectInterface
 {
-    /**
-     * @var StockItemObject
-     */
+    use ObjectTrait;
+
     protected $stock_item;
     protected $id;
     protected $sku;
@@ -43,7 +42,7 @@ class ProductsObject extends AbstractObject
      *
      * @param \stdClass $apiData
      */
-    public function __construct($apiData)
+    public function __construct(\stdClass $apiData)
     {
         $this->id = (int)$apiData->id;
         $this->sku = (string)$apiData->sku;
@@ -57,7 +56,7 @@ class ProductsObject extends AbstractObject
         $this->updated_at = (string)$apiData->updated_at;
         $this->weight = $apiData->weight ?? 0;
 
-        $this->stock_item = new StockItemObject($apiData->extension_attributes->stock_item);
+        $this->stock_item = $apiData->extension_attributes->stock_item;
         $this->bundle_product_options = $apiData->extension_attributes->bundle_product_options ?? [];
         $this->downloadable_product_links = $apiData->extension_attributes->downloadable_product_links ?? [];
         $this->downloadable_product_samples = $apiData->extension_attributes->downloadable_product_samples ?? [];
@@ -74,9 +73,9 @@ class ProductsObject extends AbstractObject
     }
 
     /**
-     * @return StockItemObject
+     * @return \stdClass
      */
-    public function getStockItem(): StockItemObject
+    public function getStockItem(): \stdClass
     {
         return $this->stock_item;
     }
@@ -162,9 +161,9 @@ class ProductsObject extends AbstractObject
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getWeight(): int
+    public function getWeight(): float
     {
         return $this->weight;
     }

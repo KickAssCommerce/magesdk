@@ -7,10 +7,18 @@ use Sandermangel\MageSDK\V1\Store\ConfigInterface;
 class Store
 {
     protected $configuration;
+    protected $code;
+    protected $storeConfigApi;
 
+    /**
+     * Store constructor.
+     * @param string $code
+     * @param ConfigInterface $storeConfigApi
+     */
     public function __construct(string $code, ConfigInterface $storeConfigApi)
     {
-        $this->configuration = $storeConfigApi->getByStoreCode($code);
+        $this->code = $code;
+        $this->storeConfigApi = $storeConfigApi;
     }
 
     /**
@@ -18,6 +26,9 @@ class Store
      */
     public function getFullConfiguration(): \stdClass
     {
+        if (!$this->configuration) {
+            $this->configuration = $this->storeConfigApi->getByStoreCode($this->code);
+        }
         return $this->configuration;
     }
 
@@ -26,7 +37,7 @@ class Store
      */
     public function getConfigValue($key)
     {
-        return $this->configuration->$key ?? null ;
+        return $this->getFullConfiguration()->$key ?? null ;
     }
 
     /**

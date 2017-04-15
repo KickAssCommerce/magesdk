@@ -4,33 +4,31 @@ namespace Sandermangel\MageSDK\Models\Products\Stock;
 
 use Sandermangel\MageSDK\ConfigInterface;
 use Sandermangel\MageSDK\Models\Store;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
-use Sandermangel\MageSDK\Models\Products\ViewInterface as ProductViewInterface;
+use Sandermangel\MageSDK\V1\Products\StockItemObjectInterface;
 use Sandermangel\MageSDK\V1\Store\Config as StoreConfig;
 
-class View
+class View implements ViewInterface
 {
     protected $stockItemObject;
     protected $config;
 
     /**
      * Stock view constructor.
-     * @param ProductViewInterface $product
+     * @param StockItemObjectInterface $stockItemObject
      * @param int $storeId
      * @param ConfigInterface $config
      */
-    public function __construct(ProductViewInterface $product, int $storeId, ConfigInterface $config)
+    public function __construct(StockItemObjectInterface $stockItemObject, int $storeId, ConfigInterface $config)
     {
-        // @todo build in check that retrieves Stock data via API when stock is not available in Product object
-        $this->stockItemObject = $product->getProductsObject()->getStockItem();
+        $this->stockItemObject = $stockItemObject;
         $this->config = $config;
         $this->store = new Store($this->config->getApiStoreCode(), new StoreConfig($this->config));
     }
 
     /**
-     * @return StockItemObject
+     * @return StockItemObjectInterface
      */
-    public function getStockItemObject(): StockItemObject
+    public function getStockItemObject(): StockItemObjectInterface
     {
         return $this->stockItemObject;
     }

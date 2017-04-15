@@ -2,15 +2,17 @@
 
 namespace Sandermangel\MageSDK\V1\Directory;
 
-use Sandermangel\MageSDK\V1\AbstractObject;
+use Sandermangel\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 directoryCountryInformationAcquirer API country object
  *
  * @package Sandermangel\MageSDK
  */
-class CountryObject extends AbstractObject
+class CountryObject
 {
+    use ObjectTrait;
+
     protected $id;
     protected $iso2;
     protected $iso3;

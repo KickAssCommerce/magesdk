@@ -2,15 +2,17 @@
 
 namespace Sandermangel\MageSDK\V1\Directory;
 
-use Sandermangel\MageSDK\V1\AbstractObject;
+use Sandermangel\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 directoryCurrencyInformationAcquirerV1 API currency object
  *
  * @package Sandermangel\MageSDK
  */
-class CurrencyObject extends AbstractObject
+class CurrencyObject
 {
+    use ObjectTrait;
+
     protected $baseCurrencyCode;
     protected $baseCurrencySymbol;
     protected $exchangeRates;

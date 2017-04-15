@@ -2,7 +2,8 @@
 
 namespace Tests\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\AbstractObject;
+use Sandermangel\MageSDK\V1\ObjectTrait;
+use Sandermangel\MageSDK\V1\Products\ProductsObjectInterface;
 use Sandermangel\MageSDK\V1\Products\StockItemObject;
 
 /**
@@ -10,12 +11,33 @@ use Sandermangel\MageSDK\V1\Products\StockItemObject;
  *
  * @package Sandermangel\MageSDK
  */
-class ProductsObjectMock extends AbstractObject
+class ProductsObjectMock implements ProductsObjectInterface
 {
-    /**
-     * @var StockItemObject
-     */
+    use ObjectTrait;
+
     protected $stock_item;
+    protected $id;
+    protected $sku;
+    protected $name;
+    protected $attribute_set_id;
+    protected $price;
+    protected $status;
+    protected $visibility;
+    protected $type_id;
+    protected $created_at;
+    protected $updated_at;
+    protected $weight;
+    protected $bundle_product_options;
+    protected $downloadable_product_links;
+    protected $downloadable_product_samples;
+    protected $giftcard_amounts;
+    protected $configurable_product_options;
+    protected $extension_attributes;
+    protected $product_links;
+    protected $options;
+    protected $media_gallery_entries;
+    protected $tier_prices;
+    protected $custom_attributes;
 
     /**
      * Converts V1 api data into a structured object
@@ -50,6 +72,182 @@ class ProductsObjectMock extends AbstractObject
         $this->media_gallery_entries = [];
         $this->tier_prices = [];
         $this->custom_attributes = [];
+    }
+
+    /**
+     * @return int
+     */
+    public function getAttributeSetId(): int
+    {
+        return $this->attribute_set_id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getBundleProductOptions(): array
+    {
+        return $this->bundle_product_options;
+    }
+
+    /**
+     * @return array
+     */
+    public function getConfigurableProductOptions(): array
+    {
+        return $this->configurable_product_options;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedAt(): string
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCustomAttributes(): array
+    {
+        return $this->custom_attributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDownloadableProductLinks(): array
+    {
+        return $this->downloadable_product_links;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDownloadableProductSamples(): array
+    {
+        return $this->downloadable_product_samples;
+    }
+
+    /**
+     * @return array
+     */
+    public function getExtensionAttributes(): array
+    {
+        return $this->extension_attributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getGiftcardAmounts(): array
+    {
+        return $this->giftcard_amounts;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMediaGalleryEntries(): array
+    {
+        return $this->media_gallery_entries;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOptions(): array
+    {
+        return $this->options;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return array
+     */
+    public function getProductLinks(): array
+    {
+        return $this->product_links;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSku(): string
+    {
+        return $this->sku;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTierPrices(): array
+    {
+        return $this->tier_prices;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeId(): string
+    {
+        return $this->type_id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdatedAt(): string
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @return int
+     */
+    public function getVisibility(): int
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * @return float
+     */
+    public function getWeight(): float
+    {
+        return $this->weight;
     }
 
     /**

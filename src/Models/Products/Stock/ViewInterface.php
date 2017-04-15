@@ -3,24 +3,23 @@
 namespace Sandermangel\MageSDK\Models\Products\Stock;
 
 use Sandermangel\MageSDK\ConfigInterface;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
-use Sandermangel\MageSDK\Models\Products\ViewInterface as ProductViewInterface;
+use Sandermangel\MageSDK\V1\Products\StockItemObjectInterface;
 
 interface ViewInterface
 {
 
     /**
      * Stock view constructor.
-     * @param ProductViewInterface $product
+     * @param StockItemObjectInterface $stockItemObject
      * @param int $storeId
      * @param ConfigInterface $config
      */
-    public function __construct(ProductViewInterface $product, int $storeId, ConfigInterface $config);
+    public function __construct(StockItemObjectInterface $stockItemObject, int $storeId, ConfigInterface $config);
 
     /**
-     * @return StockItemObject
+     * @return StockItemObjectInterface
      */
-    public function getStockItemObject(): StockItemObject;
+    public function getStockItemObject(): StockItemObjectInterface;
 
     /**
      * get products stock quantity

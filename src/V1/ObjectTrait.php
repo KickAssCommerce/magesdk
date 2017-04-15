@@ -7,7 +7,7 @@ namespace Sandermangel\MageSDK\V1;
  *
  * @package Sandermangel\MageSDK
  */
-abstract class AbstractObject
+trait ObjectTrait
 {
     /**
      * @var array

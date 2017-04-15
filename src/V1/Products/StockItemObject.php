@@ -2,15 +2,17 @@
 
 namespace Sandermangel\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\AbstractObject;
+use Sandermangel\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API stock item object
  *
  * @package Sandermangel\MageSDK
  */
-class StockItemObject extends AbstractObject
+class StockItemObject implements StockItemObjectInterface
 {
+    use ObjectTrait;
+
     protected $extension_attributes;
     protected $stock_status_changed_auto;
     protected $is_decimal_divided;
@@ -43,7 +45,7 @@ class StockItemObject extends AbstractObject
      *
      * @param \stdClass $apiData
      */
-    public function __construct($apiData)
+    public function __construct(\stdClass $apiData)
     {
         $this->id = (int)$apiData->item_id;
         $this->product_id = (int)$apiData->product_id;
