@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\V1\Products\ProductsObject;
 
 /**
- * @covers \KickAss\MageSDK\V1\Products\StockItemObject
+ * @covers \KickAss\MageSDK\V1\Products\ProductsObject
  */
 class ProductObjectTest extends TestCase
 {
@@ -18,5 +18,13 @@ class ProductObjectTest extends TestCase
     public function setUp()
     {
         $this->product = new ProductsObject(new ProductApiMock());
+    }
+
+    /**
+     * @covers \KickAss\MageSDK\V1\Products\ProductsObject::getSku
+     */
+    public function testSimpleGetters()
+    {
+        $this->assertEquals('24-MB01', $this->product->getSku());
     }
 }

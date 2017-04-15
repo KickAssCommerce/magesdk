@@ -47,7 +47,7 @@ class View implements ViewInterface
     public function getProductsObject(): ProductsObjectInterface
     {
         if (!$this->productsObject) {
-            $this->productsObject = $this->productApi->getBySku($this->sku);
+            $this->productsObject = $this->productApi->getBySku($this->sku, $this->storeId, false, false);
         }
         return $this->productsObject;
     }
