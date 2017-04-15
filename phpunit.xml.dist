@@ -14,4 +14,7 @@
             <directory>./tests/Integration/</directory>
         </testsuite>
     </testsuites>
+    <listeners>
+        <listener class="EnvListener" file="./tests/EnvListener.php"/>
+    </listeners>
 </phpunit>

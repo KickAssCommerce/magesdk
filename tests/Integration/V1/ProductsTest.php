@@ -2,9 +2,9 @@
 
 namespace Integrations\MageSDK\Api;
 
+use KickAss\MageSDK\Config;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\V1\Products;
-use Integrations\MageSDK\V1\ConfigMock;
 
 /**
  * @covers \KickAss\MageSDK\V1\Products
@@ -17,7 +17,9 @@ class ProductsTest extends TestCase
      */
     public function testGetBySku()
     {
-        $product = new Products(new ConfigMock());
-        $product->getBySku('24-MB01');
+        $product = new Products(new Config());
+        $object = $product->getBySku('24-MB01', 0, false, false);
+
+        $this->assertEquals('24-MB01', $object->getSku());
     }
 }
