@@ -69,11 +69,13 @@ class View implements ViewInterface
 
         $qtyAvailable = $stockObject->getQty(); // how many items do we actually have
 
-        if ($qtyAvailable <= 0 || false === (bool)$this->isAllowBackorders()) { // qty is lower than 0 or the allowed nr of backorders
+        // qty is lower than 0 or the allowed nr of backorders
+        if ($qtyAvailable <= 0 || false === (bool)$this->isAllowBackorders()) {
             return false;
         }
 
-        if ($this->hasMinimalSalesQty() > $qtyAvailable) { // if the minimal sales QTY is higher than the available stock we don't have stock
+        // if the minimal sales QTY is higher than the available stock we don't have stock
+        if ($this->hasMinimalSalesQty() > $qtyAvailable) {
             return false;
         }
 
