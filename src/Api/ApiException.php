@@ -1,13 +1,13 @@
 <?php
 
-namespace Sandermangel\MageSDK\Api;
+namespace KickAss\MageSDK\Api;
 
 /**
  * API exception
  *
  * Exception class thrown when the API classes encouter an issue
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class ApiException extends \Exception
 {

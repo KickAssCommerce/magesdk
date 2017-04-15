@@ -1,11 +1,11 @@
 <?php
 
-namespace Sandermangel\MageSDK;
+namespace KickAss\MageSDK;
 
 /**
  * Configuration retrieval interface
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 interface ConfigInterface
 {

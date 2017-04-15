@@ -3,13 +3,13 @@
 namespace Tests\MageSDK\Models\Products\Stock;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\Models\Products\Stock\View as StockView;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\Models\Products\Stock\View as StockView;
+use KickAss\MageSDK\V1\Products\StockItemObject;
 use Tests\MageSDK\Api\ConfigMock;
 use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**
- * @covers \Sandermangel\MageSDK\Models\Products\Stock\View
+ * @covers \KickAss\MageSDK\Models\Products\Stock\View
  */
 class ViewTest extends TestCase
 {
@@ -27,7 +27,7 @@ class ViewTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::getIsInStock
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::getIsInStock
      */
     public function testIsInStock()
     {
@@ -35,11 +35,11 @@ class ViewTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::getQtyIncrements
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::getQty
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::isManageStock
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::isAllowBackorders
-     * @covers \Sandermangel\MageSDK\Models\Products\Stock\View::hasMinimalSalesQty
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::getQtyIncrements
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::getQty
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::isManageStock
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::isAllowBackorders
+     * @covers \KickAss\MageSDK\Models\Products\Stock\View::hasMinimalSalesQty
      */
     public function testSimpleGetters()
     {

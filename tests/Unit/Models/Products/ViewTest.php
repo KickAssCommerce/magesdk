@@ -3,14 +3,14 @@
 namespace Tests\MageSDK\Models\Products;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\Models\Products\View as ProductsView;
-use Sandermangel\MageSDK\V1\Products;
-use Sandermangel\MageSDK\V1\Products\ProductsObject;
+use KickAss\MageSDK\Models\Products\View as ProductsView;
+use KickAss\MageSDK\V1\Products;
+use KickAss\MageSDK\V1\Products\ProductsObject;
 use Tests\MageSDK\Api\ConfigMock;
 use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**
- * @covers \Sandermangel\MageSDK\Models\Products\View
+ * @covers \KickAss\MageSDK\Models\Products\View
  */
 class ViewTest extends TestCase
 {
@@ -32,8 +32,8 @@ class ViewTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Products\View::getCreatedAt
-     * @covers \Sandermangel\MageSDK\Models\Products\View::getUpdatedAt
+     * @covers \KickAss\MageSDK\Models\Products\View::getCreatedAt
+     * @covers \KickAss\MageSDK\Models\Products\View::getUpdatedAt
      */
     public function testDates()
     {

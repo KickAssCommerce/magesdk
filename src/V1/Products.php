@@ -1,16 +1,16 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1;
+namespace KickAss\MageSDK\V1;
 
-use Sandermangel\MageSDK\Api\Client;
-use Sandermangel\MageSDK\Api\ApiException;
-use Sandermangel\MageSDK\V1\Products\ProductsObject;
-use Sandermangel\MageSDK\V1\Products\ProductsObjectInterface;
+use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\Api\ApiException;
+use KickAss\MageSDK\V1\Products\ProductsObject;
+use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class Products extends AbstractEndpoint implements ProductsInterface
 {

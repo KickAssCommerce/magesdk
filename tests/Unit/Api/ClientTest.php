@@ -3,17 +3,17 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\API\ApiException;
-use Sandermangel\MageSDK\Api\Client;
+use KickAss\MageSDK\API\ApiException;
+use KickAss\MageSDK\Api\Client;
 
 /**
- * @covers \Sandermangel\MageSDK\API\Client
+ * @covers \KickAss\MageSDK\API\Client
  */
 class ClientTest extends TestCase
 {
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::__construct()
+     * @covers \KickAss\MageSDK\API\Client::__construct()
      */
     public function testConstruct()
     {
@@ -39,7 +39,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::prepareHeaders()
+     * @covers \KickAss\MageSDK\API\Client::prepareHeaders()
      */
     public function testPrepareHeaders()
     {
@@ -55,7 +55,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::getApiEndpoint()
+     * @covers \KickAss\MageSDK\API\Client::getApiEndpoint()
      */
     public function testGetApiEndpoint()
     {
@@ -65,7 +65,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::getPreparedQueryString()
+     * @covers \KickAss\MageSDK\API\Client::getPreparedQueryString()
      */
     public function testGetPreparedQueryString()
     {

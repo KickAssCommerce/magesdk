@@ -1,17 +1,17 @@
 <?php
 
-namespace Sandermangel\MageSDK\Api;
+namespace KickAss\MageSDK\Api;
 
-use Sandermangel\MageSDK\Config;
-use Sandermangel\MageSDK\ConfigInterface;
-use Sandermangel\MageSDK\Api\ApiException;
+use KickAss\MageSDK\Config;
+use KickAss\MageSDK\ConfigInterface;
+use KickAss\MageSDK\Api\ApiException;
 
 /**
  * API client class
  *
  * code handling the actual call to the remote API server
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class Client
 {

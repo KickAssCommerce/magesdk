@@ -3,11 +3,11 @@
 namespace Integrations\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\Models\Products\View as ProductView;
-use Sandermangel\MageSDK\Config;
+use KickAss\MageSDK\Models\Products\View as ProductView;
+use KickAss\MageSDK\Config;
 
 /**
- * @covers \Sandermangel\MageSDK\Models\Products\View
+ * @covers \KickAss\MageSDK\Models\Products\View
  */
 class ViewTest extends TestCase
 {
@@ -22,8 +22,8 @@ class ViewTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Store::getStoreCode()
-     * @covers \Sandermangel\MageSDK\Models\Store::getStoreId()
+     * @covers \KickAss\MageSDK\Models\Store::getStoreCode()
+     * @covers \KickAss\MageSDK\Models\Store::getStoreId()
      */
     public function testGetStoreValues()
     {

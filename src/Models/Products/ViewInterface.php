@@ -1,12 +1,12 @@
 <?php
 
-namespace Sandermangel\MageSDK\Models\Products;
+namespace KickAss\MageSDK\Models\Products;
 
-use Sandermangel\MageSDK\ConfigInterface;
-use Sandermangel\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
-use Sandermangel\MageSDK\V1\Products\ProductsObjectInterface;
-use Sandermangel\MageSDK\V1\Products\StockItemObjectInterface;
-use Sandermangel\MageSDK\V1\ProductsInterface;
+use KickAss\MageSDK\ConfigInterface;
+use KickAss\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
+use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
+use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\V1\ProductsInterface;
 
 interface ViewInterface
 {

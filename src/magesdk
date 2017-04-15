@@ -13,9 +13,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Sandermangel\MageSDK\Config;
-use Sandermangel\MageSDK\V1\Integration\AdminToken;
-use Sandermangel\MageSDK\V1\Integration\CustomerToken;
+use KickAss\MageSDK\Config;
+use KickAss\MageSDK\V1\Integration\AdminToken;
+use KickAss\MageSDK\V1\Integration\CustomerToken;
 
 $console = new Application();
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1\Directory;
+namespace KickAss\MageSDK\V1\Directory;
 
-use Sandermangel\MageSDK\V1\ObjectTrait;
+use KickAss\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 directoryCountryInformationAcquirer API region object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class RegionObject
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1;
+namespace KickAss\MageSDK\V1;
 
 /**
  * Magento V1 abstract data object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 trait ObjectTrait
 {

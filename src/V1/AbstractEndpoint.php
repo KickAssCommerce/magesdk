@@ -1,13 +1,13 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1;
+namespace KickAss\MageSDK\V1;
 
-use Sandermangel\MageSDK\ConfigInterface;
+use KickAss\MageSDK\ConfigInterface;
 
 /**
  * Magento V1 abstract endpoint class
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 abstract class AbstractEndpoint
 {

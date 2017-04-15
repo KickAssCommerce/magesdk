@@ -1,8 +1,8 @@
 <?php
 
-namespace Sandermangel\MageSDK\Models;
+namespace KickAss\MageSDK\Models;
 
-use Sandermangel\MageSDK\V1\Store\ConfigInterface;
+use KickAss\MageSDK\V1\Store\ConfigInterface;
 
 class Store
 {

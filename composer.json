@@ -1,5 +1,5 @@
 {
-    "name": "sandermangel/magesdk",
+    "name": "kickass/magesdk",
     "description": "A PHP based SDK for Magento 2.x",
     "type": "library",
     "require": {
@@ -16,12 +16,12 @@
     "authors": [
         {
             "name": "Sander Mangel",
-            "email": "sander@sandermangel.nl"
+            "email": "sander@kickass.nl"
         }
     ],
     "autoload": {
       "psr-4": {
-        "Sandermangel\\MageSDK\\": "src/"
+        "KickAss\\MageSDK\\": "src/"
       }
     },
     "autoload-dev": {

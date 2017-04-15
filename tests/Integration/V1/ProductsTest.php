@@ -3,17 +3,17 @@
 namespace Integrations\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\V1\Products;
+use KickAss\MageSDK\V1\Products;
 use Integrations\MageSDK\V1\ConfigMock;
 
 /**
- * @covers \Sandermangel\MageSDK\V1\Products
+ * @covers \KickAss\MageSDK\V1\Products
  */
 class ProductsTest extends TestCase
 {
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products::getBySku()
+     * @covers \KickAss\MageSDK\V1\Products::getBySku()
      */
     public function testGetBySku()
     {

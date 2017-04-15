@@ -5,13 +5,13 @@
  * Date: 14-4-17
  * Time: 17:14
  */
-namespace Sandermangel\MageSDK\V1\Products;
+namespace KickAss\MageSDK\V1\Products;
 
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 interface ProductsObjectInterface
 {

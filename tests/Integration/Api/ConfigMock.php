@@ -2,7 +2,7 @@
 
 namespace Integrations\MageSDK\Api;
 use Dotenv\Dotenv;
-use Sandermangel\MageSDK\ConfigInterface;
+use KickAss\MageSDK\ConfigInterface;
 
 /**
  * Mock object for the config class

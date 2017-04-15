@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandermangel\MageSDK;
+namespace KickAss\MageSDK;
 
 use Dotenv\Dotenv;
 
@@ -10,7 +10,7 @@ use Dotenv\Dotenv;
  * Generic config class returns settings such as an API base url
  * for use in the library
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class Config implements ConfigInterface
 {

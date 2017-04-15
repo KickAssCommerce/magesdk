@@ -3,11 +3,11 @@
 namespace Tests\MageSDK;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\Config;
-use Sandermangel\MageSDK\ConfigInterface;
+use KickAss\MageSDK\Config;
+use KickAss\MageSDK\ConfigInterface;
 
 /**
- * @covers \Sandermangel\MageSDK\Config
+ * @covers \KickAss\MageSDK\Config
  */
 class ConfigTest extends TestCase
 {
@@ -17,7 +17,7 @@ class ConfigTest extends TestCase
     protected $config;
 
     /**
-     * @covers \Sandermangel\MageSDK\Config::__construct
+     * @covers \KickAss\MageSDK\Config::__construct
      */
     public function testConstructor()
     {
@@ -32,7 +32,7 @@ class ConfigTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Config::getBaseUrl()
+     * @covers \KickAss\MageSDK\Config::getBaseUrl()
      */
     public function testGetBaseUrl()
     {

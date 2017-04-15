@@ -3,10 +3,10 @@
 namespace Tests\MageSDK\V1\Products;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\V1\Products\StockItemObject;
 
 /**
- * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject
+ * @covers \KickAss\MageSDK\V1\Products\StockItemObject
  */
 class StockItemObjectTest extends TestCase
 {
@@ -23,7 +23,7 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getLowStockDate()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getLowStockDate()
      */
     public function testStockDate()
     {
@@ -32,11 +32,11 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getStockStatusChangedAuto()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isDecimalDivided()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isManageStock()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isEnableQtyIncrements()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isQtyDecimal()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getStockStatusChangedAuto()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isDecimalDivided()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isManageStock()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isEnableQtyIncrements()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isQtyDecimal()
      */
     public function testConfigSettings()
     {
@@ -48,9 +48,9 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getId()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getProductId()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getStockId()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getId()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getProductId()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getStockId()
      */
     public function testGetIds()
     {
@@ -60,11 +60,11 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getMinQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getMinSaleQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getMaxSaleQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::getQtyIncrements()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getMinQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getMinSaleQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getMaxSaleQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::getQtyIncrements()
      */
     public function testGetQtys()
     {
@@ -76,13 +76,13 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigBackorders()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigEnableQtyInc()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigManageStock()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigMaxSaleQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigMinQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigMinSaleQty()
-     * @covers \Sandermangel\MageSDK\V1\Products\StockItemObject::isUseConfigNotifyStockQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigBackorders()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigEnableQtyInc()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigManageStock()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigMaxSaleQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigMinQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigMinSaleQty()
+     * @covers \KickAss\MageSDK\V1\Products\StockItemObject::isUseConfigNotifyStockQty()
      */
     public function testUseConfigs()
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1\Directory;
+namespace KickAss\MageSDK\V1\Directory;
 
-use Sandermangel\MageSDK\Api\Client;
-use Sandermangel\MageSDK\V1\AbstractEndpoint;
+use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\V1\AbstractEndpoint;
 
 /**
  * Magento V1 directoryCurrencyInformationAcquirerV1 API
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class Currency extends AbstractEndpoint
 {

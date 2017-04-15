@@ -1,15 +1,15 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1\Store;
+namespace KickAss\MageSDK\V1\Store;
 
-use Sandermangel\MageSDK\Api\Client;
-use Sandermangel\MageSDK\V1\AbstractEndpoint;
-use Sandermangel\MageSDK\Api\ApiException;
+use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\V1\AbstractEndpoint;
+use KickAss\MageSDK\Api\ApiException;
 
 /**
  * Magento V1 storeStoreConfigManagerV1 API
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class Config extends AbstractEndpoint implements ConfigInterface
 {

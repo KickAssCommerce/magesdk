@@ -3,16 +3,16 @@
 namespace Integrations\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\API\ApiException;
-use Sandermangel\MageSDK\Api\Client;
+use KickAss\MageSDK\API\ApiException;
+use KickAss\MageSDK\Api\Client;
 
 /**
- * @covers \Sandermangel\MageSDK\API\Client
+ * @covers \KickAss\MageSDK\API\Client
  */
 class ClientTest extends TestCase
 {
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::executeCall()
+     * @covers \KickAss\MageSDK\API\Client::executeCall()
      */
     public function testExecuteGetCall()
     {
@@ -37,7 +37,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::executeCall()
+     * @covers \KickAss\MageSDK\API\Client::executeCall()
      */
     public function testExecutePostCall()
     {
@@ -61,7 +61,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::executeCall()
+     * @covers \KickAss\MageSDK\API\Client::executeCall()
      */
     public function testExecuteDeleteCall()
     {
@@ -82,7 +82,7 @@ class ClientTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\API\Client::executeCall()
+     * @covers \KickAss\MageSDK\API\Client::executeCall()
      */
     public function testExecutePutCall()
     {

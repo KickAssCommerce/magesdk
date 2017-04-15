@@ -1,16 +1,15 @@
 <?php
 
-namespace Sandermangel\MageSDK\Models\Products;
+namespace KickAss\MageSDK\Models\Products;
 
-use Sandermangel\MageSDK\Api\ApiException;
-use Sandermangel\MageSDK\ConfigInterface;
-use Sandermangel\MageSDK\V1\Products;
-use Sandermangel\MageSDK\V1\Products\ProductsObjectInterface;
-use Sandermangel\MageSDK\V1\Products\StockItemObjectInterface;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
-use Sandermangel\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
-use Sandermangel\MageSDK\Models\Products\Stock\View as StockView;
-use Sandermangel\MageSDK\V1\ProductsInterface;
+use KickAss\MageSDK\Api\ApiException;
+use KickAss\MageSDK\ConfigInterface;
+use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
+use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
+use KickAss\MageSDK\Models\Products\Stock\View as StockView;
+use KickAss\MageSDK\V1\ProductsInterface;
 
 class View implements ViewInterface
 {

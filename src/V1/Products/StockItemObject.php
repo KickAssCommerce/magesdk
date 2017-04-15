@@ -1,13 +1,13 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1\Products;
+namespace KickAss\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\ObjectTrait;
+use KickAss\MageSDK\V1\ObjectTrait;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API stock item object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class StockItemObject implements StockItemObjectInterface
 {

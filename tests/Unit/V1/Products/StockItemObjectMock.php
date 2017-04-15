@@ -2,12 +2,12 @@
 
 namespace Tests\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API stock item object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class StockItemObjectMock implements StockItemObjectInterface
 {

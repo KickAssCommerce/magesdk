@@ -3,11 +3,11 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\Models\Store;
-use Sandermangel\MageSDK\V1\Store\ConfigInterface;
+use KickAss\MageSDK\Models\Store;
+use KickAss\MageSDK\V1\Store\ConfigInterface;
 
 /**
- * @covers \Sandermangel\MageSDK\Models\Store
+ * @covers \KickAss\MageSDK\Models\Store
  */
 class StoreTest extends TestCase
 {
@@ -31,7 +31,7 @@ class StoreTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Store::getConfigValue()
+     * @covers \KickAss\MageSDK\Models\Store::getConfigValue()
      */
     public function testGetConfigValue()
     {
@@ -39,7 +39,7 @@ class StoreTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Store::getConfigValue()
+     * @covers \KickAss\MageSDK\Models\Store::getConfigValue()
      */
     public function testGetUndefinedConfigValue()
     {
@@ -47,8 +47,8 @@ class StoreTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\Models\Store::getStoreCode()
-     * @covers \Sandermangel\MageSDK\Models\Store::getStoreId()
+     * @covers \KickAss\MageSDK\Models\Store::getStoreCode()
+     * @covers \KickAss\MageSDK\Models\Store::getStoreId()
      */
     public function testGetStoreValues()
     {

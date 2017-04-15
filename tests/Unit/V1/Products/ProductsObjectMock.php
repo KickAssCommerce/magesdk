@@ -2,14 +2,14 @@
 
 namespace Tests\MageSDK\V1\Products;
 
-use Sandermangel\MageSDK\V1\ObjectTrait;
-use Sandermangel\MageSDK\V1\Products\ProductsObjectInterface;
-use Sandermangel\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\V1\ObjectTrait;
+use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
+use KickAss\MageSDK\V1\Products\StockItemObject;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class ProductsObjectMock implements ProductsObjectInterface
 {

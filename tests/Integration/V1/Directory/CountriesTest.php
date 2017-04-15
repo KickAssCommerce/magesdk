@@ -3,19 +3,19 @@
 namespace Integrations\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use Sandermangel\MageSDK\V1\Directory\Countries;
-use Sandermangel\MageSDK\V1\Directory\CountryObject;
-use Sandermangel\MageSDK\V1\Directory\RegionObject;
+use KickAss\MageSDK\V1\Directory\Countries;
+use KickAss\MageSDK\V1\Directory\CountryObject;
+use KickAss\MageSDK\V1\Directory\RegionObject;
 use Integrations\MageSDK\V1\ConfigMock;
 
 /**
- * @covers \Sandermangel\MageSDK\V1\Directory\Countries
+ * @covers \KickAss\MageSDK\V1\Directory\Countries
  */
 class CountriesTest extends TestCase
 {
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Directory\Countries::getAll()
+     * @covers \KickAss\MageSDK\V1\Directory\Countries::getAll()
      */
     public function testGetAll()
     {
@@ -27,7 +27,7 @@ class CountriesTest extends TestCase
     }
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Directory\Countries::getById()
+     * @covers \KickAss\MageSDK\V1\Directory\Countries::getById()
      */
     public function testGetById()
     {

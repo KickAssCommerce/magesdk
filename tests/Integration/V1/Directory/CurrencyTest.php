@@ -4,17 +4,17 @@ namespace Integrations\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
 use Integrations\MageSDK\V1\ConfigMock;
-use Sandermangel\MageSDK\V1\Directory\Currency;
-use Sandermangel\MageSDK\V1\Directory\ExchangeRateObject;
+use KickAss\MageSDK\V1\Directory\Currency;
+use KickAss\MageSDK\V1\Directory\ExchangeRateObject;
 
 /**
- * @covers \Sandermangel\MageSDK\V1\Directory\currency
+ * @covers \KickAss\MageSDK\V1\Directory\currency
  */
 class CurrencyTest extends TestCase
 {
 
     /**
-     * @covers \Sandermangel\MageSDK\V1\Directory\Currency::getStoreCurrencyInformation()
+     * @covers \KickAss\MageSDK\V1\Directory\Currency::getStoreCurrencyInformation()
      */
     public function testGetStoreCurrencyInformation()
     {

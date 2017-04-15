@@ -1,15 +1,15 @@
 <?php
 
-namespace Sandermangel\MageSDK\V1\Integration;
+namespace KickAss\MageSDK\V1\Integration;
 
-use Sandermangel\MageSDK\Api\ApiException;
-use Sandermangel\MageSDK\Api\Client;
-use Sandermangel\MageSDK\V1\AbstractEndpoint;
+use KickAss\MageSDK\Api\ApiException;
+use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\V1\AbstractEndpoint;
 
 /**
  * Magento V1 integrationAdminTokenServiceV1 API
  *
- * @package Sandermangel\MageSDK
+ * @package KickAss\MageSDK
  */
 class AdminToken extends AbstractEndpoint
 {
