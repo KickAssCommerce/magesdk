@@ -2,8 +2,6 @@
 
 namespace KickAss\MageSDK;
 
-use Dotenv\Dotenv;
-
 /**
  * Configuration retrieval class
  *
@@ -17,12 +15,9 @@ class Config implements ConfigInterface
     /**
      * set the path from where the env file is loaded on initialization
      *
-     * @param string $path
      */
-    public function __construct($path = __DIR__ . '/../')
+    public function __construct()
     {
-        $env = new Dotenv($path);
-        $env->load();
     }
 
     /**

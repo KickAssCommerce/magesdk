@@ -23,7 +23,7 @@ class ConfigTest extends TestCase
     {
         $errorString = '';
         try {
-            $this->config = new Config(__DIR__ . '/');
+            $this->config = new Config();
         } catch(\Exception $error) {
             $errorString = $error->getMessage();
         }
