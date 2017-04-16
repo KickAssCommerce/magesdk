@@ -41,6 +41,7 @@ class View implements ViewInterface
     }
 
     /**
+     * Get the product data object populated with the raw API data
      * @return ProductsObjectInterface
      * @throws ApiException
      */
@@ -53,6 +54,7 @@ class View implements ViewInterface
     }
 
     /**
+     * Get the product stock item data object populated with the raw API data
      * @return StockItemObjectInterface
      * @throws \KickAss\MageSDK\Api\ApiException
      */
@@ -62,6 +64,7 @@ class View implements ViewInterface
     }
 
     /**
+     * Get the products stock item model
      * @return StockViewInterface
      * @throws \KickAss\MageSDK\Api\ApiException
      */
