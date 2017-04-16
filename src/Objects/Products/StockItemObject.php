@@ -12,75 +12,125 @@ use KickAss\MageSDK\Objects\ObjectTrait;
 class StockItemObject implements StockItemObjectInterface
 {
     use ObjectTrait;
-
-    protected $extension_attributes;
-    protected $stock_status_changed_auto;
-    protected $is_decimal_divided;
-    protected $low_stock_date;
-    protected $use_config_manage_stock;
-    protected $manage_stock;
-    protected $use_config_enable_qty_inc;
-    protected $enable_qty_increments;
-    protected $qty_increments;
-    protected $notify_stock_qty;
-    protected $use_config_notify_stock_qty;
-    protected $backorders;
-    protected $use_config_backorders;
-    protected $use_config_max_sale_qty;
-    protected $use_config_min_sale_qty;
-    protected $use_config_min_qty;
-    protected $show_default_notification_message;
-    protected $is_qty_decimal;
-    protected $is_in_stock;
-    protected $max_sale_qty;
-    protected $min_sale_qty;
-    protected $min_qty;
+    
+    protected $itemId;
+    protected $productId;
+    protected $stockId;
+    protected $minQty;
+    protected $minSaleQty;
+    protected $maxSaleQty;
+    protected $isInStock;
+    protected $isQtyDecimal;
+    protected $showDefaultNotificationMessage;
+    protected $useConfigMinQty;
+    protected $useConfigMinSaleQty;
+    protected $useConfigMaxSaleQty;
+    protected $useConfigBackorders;
+    protected $useConfigNotifyStockQty;
+    protected $notifyStockQty;
+    protected $qtyIncrements;
+    protected $useConfigEnableQtyInc;
+    protected $enableQtyIncrements;
+    protected $manageStock;
+    protected $useConfigManageStock;
+    protected $lowStockDate;
+    protected $isDecimalDivided;
+    protected $stockStatusChangedAuto;
     protected $qty;
-    protected $stock_id;
-    protected $product_id;
-    protected $id;
+    protected $backorders;
 
     /**
      * Converts V1 api data into a structured object
-     *
-     * @param \stdClass $apiData
+     * @param int $itemId
+     * @param int $productId
+     * @param int $stockId
+     * @param int $qty
+     * @param int $minQty
+     * @param int $minSaleQty
+     * @param int $maxSaleQty
+     * @param bool $isInStock
+     * @param bool $isQtyDecimal
+     * @param bool $showDefaultNotificationMessage
+     * @param bool $useConfigMinQty
+     * @param bool $useConfigMinSaleQty
+     * @param bool $useConfigMaxSaleQty
+     * @param bool $useConfigBackorders
+     * @param bool $backorders
+     * @param bool $useConfigNotifyStockQty
+     * @param int $notifyStockQty
+     * @param int $qtyIncrements
+     * @param bool $useConfigEnableQtyInc
+     * @param bool $enableQtyIncrements
+     * @param bool $manageStock
+     * @param bool $useConfigManageStock
+     * @param string $lowStockDate
+     * @param bool $isDecimalDivided
+     * @param int $stockStatusChangedAuto
+     * @param array $extensionAttributes
      */
-    public function __construct(\stdClass $apiData)
+    public function __construct(
+        int $itemId,
+        int $productId,
+        int $stockId,
+        int $qty,
+        int $minQty,
+        int $minSaleQty,
+        int $maxSaleQty,
+        bool $isInStock,
+        bool $isQtyDecimal,
+        bool $showDefaultNotificationMessage,
+        bool $useConfigMinQty,
+        bool $useConfigMinSaleQty,
+        bool $useConfigMaxSaleQty,
+        bool $useConfigBackorders,
+        bool $backorders,
+        bool $useConfigNotifyStockQty,
+        int $notifyStockQty,
+        int $qtyIncrements,
+        bool $useConfigEnableQtyInc,
+        bool $enableQtyIncrements,
+        bool $manageStock,
+        bool $useConfigManageStock,
+        string $lowStockDate,
+        bool $isDecimalDivided,
+        int $stockStatusChangedAuto,
+        array $extensionAttributes
+    )
     {
-        $this->id = (int)$apiData->item_id;
-        $this->product_id = (int)$apiData->product_id;
-        $this->stock_id = (int)$apiData->stock_id;
-        $this->qty = (float)$apiData->qty;
-        $this->min_qty = (float)$apiData->min_qty;
-        $this->min_sale_qty = (float)$apiData->min_sale_qty;
-        $this->max_sale_qty = (float)$apiData->max_sale_qty;
-        $this->is_in_stock = (bool)$apiData->is_in_stock;
-        $this->is_qty_decimal = (bool)$apiData->is_qty_decimal;
-        $this->show_default_notification_message = (bool)$apiData->show_default_notification_message;
-        $this->use_config_min_qty = (bool)$apiData->use_config_min_qty;
-        $this->use_config_min_sale_qty = (bool)$apiData->use_config_min_sale_qty;
-        $this->use_config_max_sale_qty = (bool)$apiData->use_config_max_sale_qty;
-        $this->use_config_backorders = (bool)$apiData->use_config_backorders;
-        $this->backorders = (int)$apiData->backorders;
-        $this->use_config_notify_stock_qty = (bool)$apiData->use_config_notify_stock_qty;
-        $this->notify_stock_qty = (int)$apiData->notify_stock_qty;
-        $this->qty_increments = (int)$apiData->qty_increments;
-        $this->use_config_enable_qty_inc = (bool)$apiData->use_config_enable_qty_inc;
-        $this->enable_qty_increments = (bool)$apiData->enable_qty_increments;
-        $this->manage_stock = (bool)$apiData->manage_stock;
-        $this->use_config_manage_stock = (bool)$apiData->use_config_manage_stock;
-        $this->low_stock_date = (string)$apiData->low_stock_date;
-        $this->is_decimal_divided = (bool)$apiData->is_decimal_divided;
-        $this->stock_status_changed_auto = (int)$apiData->stock_status_changed_auto;
-        $this->extension_attributes = $apiData->extension_attributes ?? [];
+        $this->itemId = $itemId;
+        $this->productId = $productId;
+        $this->stockId = $stockId;
+        $this->qty = $qty;
+        $this->minQty = $minQty;
+        $this->minSaleQty = $minSaleQty;
+        $this->maxSaleQty = $maxSaleQty;
+        $this->isInStock = $isInStock;
+        $this->isQtyDecimal = $isQtyDecimal;
+        $this->showDefaultNotificationMessage = $showDefaultNotificationMessage;
+        $this->useConfigMinQty = $useConfigMinQty;
+        $this->useConfigMinSaleQty = $useConfigMinSaleQty;
+        $this->useConfigMaxSaleQty = $useConfigMaxSaleQty;
+        $this->useConfigBackorders = $useConfigBackorders;
+        $this->backorders = $backorders;
+        $this->useConfigNotifyStockQty = $useConfigNotifyStockQty;
+        $this->notifyStockQty = $notifyStockQty;
+        $this->qtyIncrements = $qtyIncrements;
+        $this->useConfigEnableQtyInc = $useConfigEnableQtyInc;
+        $this->enableQtyIncrements = $enableQtyIncrements;
+        $this->manageStock = $manageStock;
+        $this->useConfigManageStock = $useConfigManageStock;
+        $this->lowStockDate = $lowStockDate;
+        $this->isDecimalDivided = $isDecimalDivided;
+        $this->stockStatusChangedAuto = $stockStatusChangedAuto;
+        $this->extensionAttributes = $extensionAttributes;
     }
 
     /**
      * @return int
      */
-    public function getId(): int
+    public function getItemId(): int
     {
-        return $this->id;
+        return $this->itemId;
     }
 
     /**
@@ -88,7 +138,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function getProductId(): int
     {
-        return $this->product_id;
+        return $this->productId;
     }
 
     /**
@@ -96,39 +146,31 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function getStockId(): int
     {
-        return $this->stock_id;
+        return $this->stockId;
     }
 
     /**
-     * @return float
+     * @return int
      */
-    public function getQty(): float
+    public function getMinQty(): int
     {
-        return $this->qty;
+        return $this->minQty;
     }
 
     /**
-     * @return float
+     * @return int
      */
-    public function getMinQty(): float
+    public function getMinSaleQty(): int
     {
-        return $this->min_qty;
+        return $this->minSaleQty;
     }
 
     /**
-     * @return float
+     * @return int
      */
-    public function getMinSaleQty(): float
+    public function getMaxSaleQty(): int
     {
-        return $this->min_sale_qty;
-    }
-
-    /**
-     * @return float
-     */
-    public function getMaxSaleQty(): float
-    {
-        return $this->max_sale_qty;
+        return $this->maxSaleQty;
     }
 
     /**
@@ -136,7 +178,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isInStock(): bool
     {
-        return $this->is_in_stock;
+        return $this->isInStock;
     }
 
     /**
@@ -144,7 +186,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isQtyDecimal(): bool
     {
-        return $this->is_qty_decimal;
+        return $this->isQtyDecimal;
     }
 
     /**
@@ -152,7 +194,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isShowDefaultNotificationMessage(): bool
     {
-        return $this->show_default_notification_message;
+        return $this->showDefaultNotificationMessage;
     }
 
     /**
@@ -160,7 +202,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigMinQty(): bool
     {
-        return $this->use_config_min_qty;
+        return $this->useConfigMinQty;
     }
 
     /**
@@ -168,7 +210,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigMinSaleQty(): bool
     {
-        return $this->use_config_min_sale_qty;
+        return $this->useConfigMinSaleQty;
     }
 
     /**
@@ -176,7 +218,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigMaxSaleQty(): bool
     {
-        return $this->use_config_max_sale_qty;
+        return $this->useConfigMaxSaleQty;
     }
 
     /**
@@ -184,15 +226,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigBackorders(): bool
     {
-        return $this->use_config_backorders;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBackorders(): int
-    {
-        return $this->backorders;
+        return $this->useConfigBackorders;
     }
 
     /**
@@ -200,7 +234,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigNotifyStockQty(): bool
     {
-        return $this->use_config_notify_stock_qty;
+        return $this->useConfigNotifyStockQty;
     }
 
     /**
@@ -208,7 +242,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function getNotifyStockQty(): int
     {
-        return $this->notify_stock_qty;
+        return $this->notifyStockQty;
     }
 
     /**
@@ -216,7 +250,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function getQtyIncrements(): int
     {
-        return $this->qty_increments;
+        return $this->qtyIncrements;
     }
 
     /**
@@ -224,47 +258,7 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isUseConfigEnableQtyInc(): bool
     {
-        return $this->use_config_enable_qty_inc;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isManageStock(): bool
-    {
-        return $this->manage_stock;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isUseConfigManageStock(): bool
-    {
-        return $this->use_config_manage_stock;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getLowStockDate(): \DateTime
-    {
-        return new \DateTime($this->low_stock_date);
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isDecimalDivided(): bool
-    {
-        return $this->is_decimal_divided;
-    }
-
-    /**
-     * @return int
-     */
-    public function getStockStatusChangedAuto(): int
-    {
-        return $this->stock_status_changed_auto;
+        return $this->useConfigEnableQtyInc;
     }
 
     /**
@@ -272,6 +266,62 @@ class StockItemObject implements StockItemObjectInterface
      */
     public function isEnableQtyIncrements(): bool
     {
-        return $this->enable_qty_increments;
+        return $this->enableQtyIncrements;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isManageStock(): bool
+    {
+        return $this->manageStock;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isUseConfigManageStock(): bool
+    {
+        return $this->useConfigManageStock;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLowStockDate(): string
+    {
+        return $this->lowStockDate;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isDecimalDivided(): bool
+    {
+        return $this->isDecimalDivided;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStockStatusChangedAuto(): int
+    {
+        return $this->stockStatusChangedAuto;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQty(): int
+    {
+        return $this->qty;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isBackorders(): bool
+    {
+        return $this->backorders;
     }
 }

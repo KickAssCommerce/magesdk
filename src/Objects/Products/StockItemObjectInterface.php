@@ -1,6 +1,12 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: sander
+ * Date: 16-4-17
+ * Time: 16:51
+ */
 namespace KickAss\MageSDK\Objects\Products;
+
 
 /**
  * Magento V1 catalogProductRepositoryV1 API stock item object
@@ -10,15 +16,47 @@ namespace KickAss\MageSDK\Objects\Products;
 interface StockItemObjectInterface
 {
     /**
-     * returns an array of 3rd party added attributes
-     * @return array
+     * Converts V1 api data into a structured object
+     * @param int $itemId
+     * @param int $productId
+     * @param int $stockId
+     * @param int $qty
+     * @param int $minQty
+     * @param int $minSaleQty
+     * @param int $maxSaleQty
+     * @param bool $isInStock
+     * @param bool $isQtyDecimal
+     * @param bool $showDefaultNotificationMessage
+     * @param bool $useConfigMinQty
+     * @param bool $useConfigMinSaleQty
+     * @param bool $useConfigMaxSaleQty
+     * @param bool $useConfigBackorders
+     * @param bool $backorders
+     * @param bool $useConfigNotifyStockQty
+     * @param int $notifyStockQty
+     * @param int $qtyIncrements
+     * @param bool $useConfigEnableQtyInc
+     * @param bool $enableQtyIncrements
+     * @param bool $manageStock
+     * @param bool $useConfigManageStock
+     * @param string $lowStockDate
+     * @param bool $isDecimalDivided
+     * @param int $stockStatusChangedAuto
+     * @param array $extensionAttributes
      */
-    public function getExtensionAttributes() : array;
+    public function __construct(int $itemId, int $productId, int $stockId, int $qty, int $minQty,
+                                int $minSaleQty, int $maxSaleQty, bool $isInStock, bool $isQtyDecimal,
+                                bool $showDefaultNotificationMessage, bool $useConfigMinQty,
+                                bool $useConfigMinSaleQty, bool $useConfigMaxSaleQty, bool $useConfigBackorders,
+                                bool $backorders, bool $useConfigNotifyStockQty, int $notifyStockQty,
+                                int $qtyIncrements, bool $useConfigEnableQtyInc, bool $enableQtyIncrements,
+                                bool $manageStock, bool $useConfigManageStock, string $lowStockDate,
+                                bool $isDecimalDivided, int $stockStatusChangedAuto, array $extensionAttributes);
 
     /**
      * @return int
      */
-    public function getId() : int;
+    public function getItemId() : int;
 
     /**
      * @return int
@@ -31,24 +69,19 @@ interface StockItemObjectInterface
     public function getStockId() : int;
 
     /**
-     * @return float
+     * @return int
      */
-    public function getQty() : float;
+    public function getMinQty() : int;
 
     /**
-     * @return float
+     * @return int
      */
-    public function getMinQty() : float;
+    public function getMinSaleQty() : int;
 
     /**
-     * @return float
+     * @return int
      */
-    public function getMinSaleQty() : float;
-
-    /**
-     * @return float
-     */
-    public function getMaxSaleQty() : float;
+    public function getMaxSaleQty() : int;
 
     /**
      * @return boolean
@@ -86,11 +119,6 @@ interface StockItemObjectInterface
     public function isUseConfigBackorders() : bool;
 
     /**
-     * @return int
-     */
-    public function getBackorders() : int;
-
-    /**
      * @return boolean
      */
     public function isUseConfigNotifyStockQty() : bool;
@@ -113,6 +141,11 @@ interface StockItemObjectInterface
     /**
      * @return boolean
      */
+    public function isEnableQtyIncrements() : bool;
+
+    /**
+     * @return boolean
+     */
     public function isManageStock() : bool;
 
     /**
@@ -121,9 +154,9 @@ interface StockItemObjectInterface
     public function isUseConfigManageStock() : bool;
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getLowStockDate() : \DateTime;
+    public function getLowStockDate() : string;
 
     /**
      * @return boolean
@@ -136,7 +169,12 @@ interface StockItemObjectInterface
     public function getStockStatusChangedAuto() : int;
 
     /**
+     * @return int
+     */
+    public function getQty() : int;
+
+    /**
      * @return boolean
      */
-    public function isEnableQtyIncrements() : bool;
+    public function isBackorders() : bool;
 }

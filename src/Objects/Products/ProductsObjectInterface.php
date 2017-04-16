@@ -2,6 +2,8 @@
 
 namespace KickAss\MageSDK\Objects\Products;
 
+use KickAss\MageSDK\Objects\Products\Bundle\OptionObject;
+
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
  *
@@ -10,9 +12,45 @@ namespace KickAss\MageSDK\Objects\Products;
 interface ProductsObjectInterface
 {
     /**
-     * @return \stdClass
+     * Converts V1 api data into a structured object
+     *
+     * @param int $id
+     * @param string $sku
+     * @param string $name
+     * @param int $attributeSetId
+     * @param float $price
+     * @param int $status
+     * @param int $visibility
+     * @param string $typeId
+     * @param string $createdAt
+     * @param string $updatedAt
+     * @param float $weight
+     * @param StockItemObjectInterface $stockItem
+     * @param array $bundleBroductOptions
+     * @param array $downloadableProductLinks
+     * @param array $downloadableProductSamples
+     * @param array $giftcardAmounts
+     * @param array $configurableProductOptions
+     * @param array $productLinks
+     * @param array $options
+     * @param array $mediaGalleryEntries
+     * @param array $tierPrices
+     * @param array $customAttributes
+     * @param array $extensionAttributes
+     * @internal param \stdClass $apiData
      */
-    public function getStockItem() : \stdClass;
+    public function __construct(int $id, string $sku, string $name, int $attributeSetId,
+                                float $price, int $status, int $visibility, string $typeId, string $createdAt,
+                                string $updatedAt, float $weight, StockItemObjectInterface $stockItem,
+                                array $bundleBroductOptions, array $downloadableProductLinks,
+                                array $downloadableProductSamples, array $giftcardAmounts, array $configurableProductOptions,
+                                array $productLinks, array $options, array $mediaGalleryEntries,
+                                array $tierPrices, array $customAttributes, array $extensionAttributes);
+
+    /**
+     * @return StockItemObjectInterface
+     */
+    public function getStockItem() : StockItemObjectInterface;
 
     /**
      * @return int
@@ -65,12 +103,12 @@ interface ProductsObjectInterface
     public function getUpdatedAt() : string;
 
     /**
-     * @return int
+     * @return float
      */
     public function getWeight() : float;
 
     /**
-     * @return array
+     * @return OptionObject[]
      */
     public function getBundleProductOptions() : array;
 
@@ -93,11 +131,6 @@ interface ProductsObjectInterface
      * @return array
      */
     public function getConfigurableProductOptions() : array;
-
-    /**
-     * @return mixed
-     */
-    public function getExtensionAttributes() : array;
 
     /**
      * @return array

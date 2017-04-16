@@ -99,6 +99,6 @@ class OptionObject implements OptionObjectInterface
                 $item->qty, $item->position, $item->is_default, $item->price,
                 $item->price_type, $item->can_change_qty,
                 $item->extension_attributes);
-        }, $this->productLinks);
+        }, (array)$this->productLinks);
     }
 }

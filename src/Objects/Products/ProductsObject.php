@@ -3,6 +3,7 @@
 namespace KickAss\MageSDK\Objects\Products;
 
 use KickAss\MageSDK\Objects\ObjectTrait;
+use KickAss\MageSDK\Objects\Products\Bundle\OptionObject;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object
@@ -40,44 +41,120 @@ class ProductsObject implements ProductsObjectInterface
     /**
      * Converts V1 api data into a structured object
      *
-     * @param \stdClass $apiData
+     * @param int $id
+     * @param string $sku
+     * @param string $name
+     * @param int $attributeSetId
+     * @param float $price
+     * @param int $status
+     * @param int $visibility
+     * @param string $typeId
+     * @param string $createdAt
+     * @param string $updatedAt
+     * @param float $weight
+     * @param StockItemObjectInterface $stockItem
+     * @param array $bundleBroductOptions
+     * @param array $downloadableProductLinks
+     * @param array $downloadableProductSamples
+     * @param array $giftcardAmounts
+     * @param array $configurableProductOptions
+     * @param array $productLinks
+     * @param array $options
+     * @param array $mediaGalleryEntries
+     * @param array $tierPrices
+     * @param array $customAttributes
+     * @param array $extensionAttributes
+     * @internal param \stdClass $apiData
      */
-    public function __construct(\stdClass $apiData)
+    public function __construct(
+        int $id,
+        string $sku,
+        string $name,
+        int $attributeSetId,
+        float $price,
+        int $status,
+        int $visibility,
+        string $typeId,
+        string $createdAt,
+        string $updatedAt,
+        float $weight,
+        StockItemObjectInterface $stockItem,
+        array $bundleBroductOptions,
+        array $downloadableProductLinks,
+        array $downloadableProductSamples,
+        array $giftcardAmounts,
+        array $configurableProductOptions,
+        array $productLinks,
+        array $options,
+        array $mediaGalleryEntries,
+        array $tierPrices,
+        array $customAttributes,
+        array $extensionAttributes
+    )
     {
-        $this->id = (int)$apiData->id;
-        $this->sku = (string)$apiData->sku;
-        $this->name = (string)$apiData->name;
-        $this->attribute_set_id = (int)$apiData->attribute_set_id;
-        $this->price = (float)$apiData->price;
-        $this->status = (int)$apiData->status;
-        $this->visibility = (int)$apiData->visibility;
-        $this->type_id = (string)$apiData->type_id;
-        $this->created_at = (string)$apiData->created_at;
-        $this->updated_at = (string)$apiData->updated_at;
-        $this->weight = $apiData->weight ?? 0;
+        $this->id = $id;
+        $this->sku = $sku;
+        $this->name = $name;
+        $this->attribute_set_id = $attributeSetId;
+        $this->price = $price;
+        $this->status = $status;
+        $this->visibility = $visibility;
+        $this->type_id = $typeId;
+        $this->created_at = $createdAt;
+        $this->updated_at = $updatedAt;
+        $this->weight = $weight;
 
-        $this->stock_item = $apiData->extension_attributes->stock_item;
-        $this->bundle_product_options = $apiData->extension_attributes->bundle_product_options ?? [];
-        $this->downloadable_product_links = $apiData->extension_attributes->downloadable_product_links ?? [];
-        $this->downloadable_product_samples = $apiData->extension_attributes->downloadable_product_samples ?? [];
-        $this->giftcard_amounts = $apiData->extension_attributes->giftcard_amounts ?? [];
-        $this->configurable_product_options = $apiData->extension_attributes->configurable_product_options ?? [];
+        $this->stock_item = $stockItem;
+        $this->bundle_product_options = $bundleBroductOptions;
+        $this->downloadable_product_links = $downloadableProductLinks;
+        $this->downloadable_product_samples = $downloadableProductSamples;
+        $this->giftcard_amounts = $giftcardAmounts;
+        $this->configurable_product_options = $configurableProductOptions;
 
-        $this->extension_attributes = $apiData->extension_attributes;
+        $this->extension_attributes = $extensionAttributes;
 
-        $this->product_links = (array)$apiData->product_links;
-        $this->options = (array)$apiData->options;
-        $this->media_gallery_entries = (array)$apiData->media_gallery_entries;
-        $this->tier_prices = (array)$apiData->tier_prices;
-        $this->custom_attributes = (array)$apiData->custom_attributes;
+        $this->product_links = $productLinks;
+        $this->options = $options;
+        $this->media_gallery_entries = $mediaGalleryEntries;
+        $this->tier_prices = $tierPrices;
+        $this->custom_attributes = $customAttributes;
     }
 
     /**
-     * @return \stdClass
+     * @return StockItemObjectInterface
      */
-    public function getStockItem(): \stdClass
+    public function getStockItem(): StockItemObjectInterface
     {
-        return $this->stock_item;
+        return array_map(function($item) {
+            return new StockItemObject(
+                $item->item_id,
+                $item->product_id,
+                $item->stock_id,
+                $item->qty,
+                $item->min_qty,
+                $item->min_sale_qty,
+                $item->max_sale_qty,
+                $item->is_in_stock,
+                $item->is_qty_decimal,
+                $item->show_default_notification_message,
+                $item->use_config_min_qty,
+                $item->use_config_min_sale_qty,
+                $item->use_config_max_sale_qty,
+                $item->use_config_backorders,
+                $item->backorders,
+                $item->use_config_notify_stock_qty,
+                $item->notify_stock_qty,
+                $item->qty_increments,
+                $item->use_config_enable_qty_inc,
+                $item->enable_qty_increments,
+                $item->manage_stock,
+                $item->use_config_manage_stock,
+                $item->low_stock_date,
+                $item->is_decimal_divided,
+                $item->stock_status_changed_auto,
+                $item->extension_attributes
+            );
+        }, (array)$this->stock_item);
     }
 
     /**
@@ -169,11 +246,14 @@ class ProductsObject implements ProductsObjectInterface
     }
 
     /**
-     * @return array
+     * @return OptionObject[]
      */
     public function getBundleProductOptions(): array
     {
-        return $this->bundle_product_options;
+        return array_map(function($item) {
+            return new OptionObject($item->option_id, $item->title, $item->required,
+                $item->type, $item->position, $item->sku, $item->product_links);
+        }, (array)$this->bundle_product_options);
     }
 
     /**
