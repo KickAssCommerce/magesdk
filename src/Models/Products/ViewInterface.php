@@ -2,6 +2,7 @@
 
 namespace KickAss\MageSDK\Models\Products;
 
+use KickAss\MageSDK\Api\ApiException;
 use KickAss\MageSDK\ConfigInterface;
 use KickAss\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
 use KickAss\MageSDK\Objects\Products\ProductsObjectInterface;
@@ -35,4 +36,18 @@ interface ViewInterface
      * @return StockViewInterface
      */
     public function getStockModel(): StockViewInterface;
+
+    /**
+     * get the datetime object of the moment the product was last updated
+     * @return \DateTime
+     * @throws ApiException
+     */
+    public function getUpdatedAt(): \DateTime;
+
+    /**
+     * get the datetime object of the moment the product was created
+     * @return \DateTime
+     * @throws ApiException
+     */
+    public function getCreatedAt(): \DateTime;
 }

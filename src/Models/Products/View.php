@@ -18,10 +18,7 @@ class View implements ViewInterface
     protected $config;
     protected $storeId;
     protected $sku;
-    /**
-     * @var ProductsInterface
-     */
-    private $productApi;
+    protected $productApi;
 
     /**
      * ProductInfo constructor.
@@ -56,7 +53,7 @@ class View implements ViewInterface
     /**
      * Get the product stock item data object populated with the raw API data
      * @return StockItemObjectInterface
-     * @throws \KickAss\MageSDK\Api\ApiException
+     * @throws ApiException
      */
     public function getStockItemObject(): StockItemObjectInterface
     {
@@ -66,7 +63,7 @@ class View implements ViewInterface
     /**
      * Get the products stock item model
      * @return StockViewInterface
-     * @throws \KickAss\MageSDK\Api\ApiException
+     * @throws ApiException
      */
     public function getStockModel(): StockViewInterface
     {
