@@ -3,7 +3,7 @@
 namespace KickAss\MageSDK\Models\Products\Stock;
 
 use KickAss\MageSDK\ConfigInterface;
-use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObjectInterface;
 
 interface ViewInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\MageSDK\V1;
+namespace KickAss\MageSDK\Objects;
 
 /**
  * Magento V1 abstract data object

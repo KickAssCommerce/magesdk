@@ -4,9 +4,9 @@ namespace KickAss\MageSDK\Models\Products;
 
 use KickAss\MageSDK\Api\ApiException;
 use KickAss\MageSDK\ConfigInterface;
-use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
-use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
-use KickAss\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\Objects\Products\ProductsObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObject;
 use KickAss\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
 use KickAss\MageSDK\Models\Products\Stock\View as StockView;
 use KickAss\MageSDK\V1\ProductsInterface;

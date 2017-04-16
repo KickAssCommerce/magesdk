@@ -4,8 +4,8 @@ namespace KickAss\MageSDK\Models\Products;
 
 use KickAss\MageSDK\ConfigInterface;
 use KickAss\MageSDK\Models\Products\Stock\ViewInterface as StockViewInterface;
-use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
-use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\Objects\Products\ProductsObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObjectInterface;
 use KickAss\MageSDK\V1\ProductsInterface;
 
 interface ViewInterface

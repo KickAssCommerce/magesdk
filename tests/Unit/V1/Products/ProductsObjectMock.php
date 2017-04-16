@@ -2,9 +2,9 @@
 
 namespace Tests\MageSDK\V1\Products;
 
-use KickAss\MageSDK\V1\ObjectTrait;
-use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
-use KickAss\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\Objects\ObjectTrait;
+use KickAss\MageSDK\Objects\Products\ProductsObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObject;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object

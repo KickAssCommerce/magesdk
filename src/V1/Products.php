@@ -4,8 +4,8 @@ namespace KickAss\MageSDK\V1;
 
 use KickAss\MageSDK\Api\Client;
 use KickAss\MageSDK\Api\ApiException;
-use KickAss\MageSDK\V1\Products\ProductsObject;
-use KickAss\MageSDK\V1\Products\ProductsObjectInterface;
+use KickAss\MageSDK\Objects\Products\ProductsObject;
+use KickAss\MageSDK\Objects\Products\ProductsObjectInterface;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API

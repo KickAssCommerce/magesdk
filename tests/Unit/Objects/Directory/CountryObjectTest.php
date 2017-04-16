@@ -3,10 +3,10 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use KickAss\MageSDK\V1\Directory\CountryObject;
+use KickAss\MageSDK\Objects\Directory\CountryObject;
 
 /**
- * @covers \KickAss\MageSDK\V1\Directory\CountryObject
+ * @covers \KickAss\MageSDK\Objects\Directory\CountryObject
  */
 class CountryObjectTest extends TestCase
 {
@@ -28,7 +28,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getId()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getId()
      */
     public function testGetId()
     {
@@ -36,7 +36,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getIso2()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getIso2()
      */
     public function testGetIso2()
     {
@@ -44,7 +44,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getIso3()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getIso3()
      */
     public function testGetIso3()
     {
@@ -52,7 +52,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getLocaleName()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getLocaleName()
      */
     public function testGetLocaleName()
     {
@@ -60,7 +60,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getEnglishName()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getEnglishName()
      */
     public function testGetEnglishName()
     {
@@ -68,7 +68,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getRegions()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getRegions()
      */
     public function testGetRegions()
     {
@@ -76,7 +76,7 @@ class CountryObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CountryObject::getExtensionAttributes()
+     * @covers \KickAss\MageSDK\Objects\Directory\CountryObject::getExtensionAttributes()
      */
     public function testGetExtensionAttributes()
     {

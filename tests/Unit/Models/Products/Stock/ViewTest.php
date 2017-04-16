@@ -5,7 +5,7 @@ namespace Tests\MageSDK\Models\Products\Stock;
 use KickAss\MageSDK\Config;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Products\Stock\View as StockView;
-use KickAss\MageSDK\V1\Products\StockItemObject;
+use KickAss\MageSDK\Objects\Products\StockItemObject;
 use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**

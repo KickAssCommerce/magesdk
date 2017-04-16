@@ -4,7 +4,7 @@ namespace KickAss\MageSDK\Models\Products\Stock;
 
 use KickAss\MageSDK\ConfigInterface;
 use KickAss\MageSDK\Models\Store;
-use KickAss\MageSDK\V1\Products\StockItemObjectInterface;
+use KickAss\MageSDK\Objects\Products\StockItemObjectInterface;
 use KickAss\MageSDK\V1\Store as StoreConfig;
 
 class View implements ViewInterface

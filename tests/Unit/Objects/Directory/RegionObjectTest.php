@@ -3,10 +3,10 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use KickAss\MageSDK\V1\Directory\RegionObject;
+use KickAss\MageSDK\Objects\Directory\RegionObject;
 
 /**
- * @covers \KickAss\MageSDK\V1\Directory\RegionObject
+ * @covers \KickAss\MageSDK\Objects\Directory\RegionObject
  */
 class RegionObjectTest extends TestCase
 {
@@ -26,7 +26,7 @@ class RegionObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\RegionObject::getId()
+     * @covers \KickAss\MageSDK\Objects\Directory\RegionObject::getId()
      */
     public function testGetId()
     {
@@ -34,7 +34,7 @@ class RegionObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\RegionObject::getCode()
+     * @covers \KickAss\MageSDK\Objects\Directory\RegionObject::getCode()
      */
     public function testGetCode()
     {
@@ -42,7 +42,7 @@ class RegionObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\RegionObject::getName()
+     * @covers \KickAss\MageSDK\Objects\Directory\RegionObject::getName()
      */
     public function testGetName()
     {

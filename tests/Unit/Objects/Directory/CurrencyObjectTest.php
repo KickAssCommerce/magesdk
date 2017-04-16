@@ -3,11 +3,11 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use KickAss\MageSDK\V1\Directory\CurrencyObject;
-use KickAss\MageSDK\V1\Directory\ExchangeRateObject;
+use KickAss\MageSDK\Objects\Directory\CurrencyObject;
+use KickAss\MageSDK\Objects\Directory\ExchangeRateObject;
 
 /**
- * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject
+ * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject
  */
 class CurrencyObjectTest extends TestCase
 {
@@ -37,7 +37,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getBaseCurrencyCode()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getBaseCurrencyCode()
      */
     public function testGetBaseCurrencyCode()
     {
@@ -45,7 +45,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getBaseCurrencySymbol()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getBaseCurrencySymbol()
      */
     public function testGetBaseCurrencySymbol()
     {
@@ -53,7 +53,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getDisplayCurrencyCode()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getDisplayCurrencyCode()
      */
     public function testGetDisplayCurrencyCode()
     {
@@ -61,7 +61,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getDisplayCurrencySymbol()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getDisplayCurrencySymbol()
      */
     public function testGetDisplayCurrencySymbol()
     {
@@ -69,7 +69,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getCurrencyCodes()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getCurrencyCodes()
      */
     public function testGetCurrencyCodes()
     {
@@ -77,7 +77,7 @@ class CurrencyObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\CurrencyObject::getExchangeRates()
+     * @covers \KickAss\MageSDK\Objects\Directory\CurrencyObject::getExchangeRates()
      */
     public function testGetExchangeRates()
     {

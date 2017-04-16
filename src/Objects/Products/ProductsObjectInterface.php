@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\MageSDK\V1\Products;
+namespace KickAss\MageSDK\Objects\Products;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API products object

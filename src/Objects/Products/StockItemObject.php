@@ -1,8 +1,8 @@
 <?php
 
-namespace KickAss\MageSDK\V1\Products;
+namespace KickAss\MageSDK\Objects\Products;
 
-use KickAss\MageSDK\V1\ObjectTrait;
+use KickAss\MageSDK\Objects\ObjectTrait;
 
 /**
  * Magento V1 catalogProductRepositoryV1 API stock item object

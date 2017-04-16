@@ -3,10 +3,10 @@
 namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
-use KickAss\MageSDK\V1\Directory\ExchangeRateObject;
+use KickAss\MageSDK\Objects\Directory\ExchangeRateObject;
 
 /**
- * @covers \KickAss\MageSDK\V1\Directory\ExchangeRateObject
+ * @covers \KickAss\MageSDK\Objects\Directory\ExchangeRateObject
  */
 class ExchangeRateObjectTest extends TestCase
 {
@@ -26,7 +26,7 @@ class ExchangeRateObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\ExchangeRateObject::getCurrencyCode()
+     * @covers \KickAss\MageSDK\Objects\Directory\ExchangeRateObject::getCurrencyCode()
      */
     public function testGetCurrencyCode()
     {
@@ -34,7 +34,7 @@ class ExchangeRateObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Directory\ExchangeRateObject::getRate()
+     * @covers \KickAss\MageSDK\Objects\Directory\ExchangeRateObject::getRate()
      */
     public function testGetRate()
     {

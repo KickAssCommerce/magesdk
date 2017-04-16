@@ -1,8 +1,8 @@
 <?php
 
-namespace KickAss\MageSDK\V1\Directory;
+namespace KickAss\MageSDK\Objects\Directory;
 
-use KickAss\MageSDK\V1\ObjectTrait;
+use KickAss\MageSDK\Objects\ObjectTrait;
 
 /**
  * Magento V1 directoryCountryInformationAcquirer API region object

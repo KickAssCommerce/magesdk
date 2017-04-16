@@ -1,12 +1,13 @@
 <?php
 
-namespace Tests\MageSDK\V1\Products;
+namespace Tests\MageSDK\Objects\Products;
 
 use PHPUnit\Framework\TestCase;
-use KickAss\MageSDK\V1\Products\ProductsObject;
+use KickAss\MageSDK\Objects\Products\ProductsObject;
+use Tests\MageSDK\V1\Products\ProductApiMock;
 
 /**
- * @covers \KickAss\MageSDK\V1\Products\ProductsObject
+ * @covers \KickAss\MageSDK\Objects\Products\ProductsObject
  */
 class ProductObjectTest extends TestCase
 {
@@ -21,7 +22,7 @@ class ProductObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\V1\Products\ProductsObject::getSku
+     * @covers \KickAss\MageSDK\Objects\Products\ProductsObject::getSku
      */
     public function testSimpleGetters()
     {
