@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sander
- * Date: 14-4-17
- * Time: 17:14
- */
+
 namespace KickAss\MageSDK\V1\Products;
 
 /**
