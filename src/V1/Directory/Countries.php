@@ -14,6 +14,10 @@ class Countries extends AbstractEndpoint
 {
     protected $path = 'directory/countries';
 
+    /**
+     * @return CountryObjectInterface[] array
+     * @throws \KickAss\MageSDK\Api\ApiException
+     */
     public function getAll():array
     {
         $client = new Client($this->getConfig(), 'GET', $this->getPath(), [], []);
@@ -24,7 +28,12 @@ class Countries extends AbstractEndpoint
         }, $response['body']);
     }
 
-    public function getById(string $id):CountryObject
+    /**
+     * @param string $id
+     * @return CountryObjectInterface
+     * @throws \KickAss\MageSDK\Api\ApiException
+     */
+    public function getById(string $id):CountryObjectInterface
     {
         $client = new Client($this->getConfig(), 'GET', $this->getPath() . '/' . $id, [], []);
         $response = $client->executeCall();

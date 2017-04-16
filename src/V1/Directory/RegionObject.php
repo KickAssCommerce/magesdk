@@ -9,7 +9,7 @@ use KickAss\MageSDK\V1\ObjectTrait;
  *
  * @package KickAss\MageSDK
  */
-class RegionObject
+class RegionObject implements RegionObjectInterface
 {
     use ObjectTrait;
 

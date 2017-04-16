@@ -14,7 +14,11 @@ class Currency extends AbstractEndpoint
 {
     protected $path = 'directory/currency';
 
-    public function getStoreCurrencyInformation():CurrencyObject
+    /**
+     * @return CurrencyObjectInterface
+     * @throws \KickAss\MageSDK\Api\ApiException
+     */
+    public function getStoreCurrencyInformation():CurrencyObjectInterface
     {
         $client = new Client($this->getConfig(), 'GET', $this->getPath(), [], []);
         $response = $client->executeCall();

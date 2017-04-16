@@ -9,7 +9,7 @@ use KickAss\MageSDK\V1\ObjectTrait;
  *
  * @package KickAss\MageSDK
  */
-class CurrencyObject
+class CurrencyObject implements CurrencyObjectInterface
 {
     use ObjectTrait;
 
