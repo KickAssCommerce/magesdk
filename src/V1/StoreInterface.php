@@ -1,13 +1,13 @@
 <?php
 
-namespace KickAss\MageSDK\V1\Store;
+namespace KickAss\MageSDK\V1;
 
 /**
  * Magento V1 storeStoreConfigManagerV1 API
  *
  * @package KickAss\MageSDK
  */
-interface ConfigInterface
+interface StoreInterface
 {
     /**
      * @param string $code

@@ -5,7 +5,7 @@ namespace Integrations\MageSDK\Api;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Store;
 use KickAss\MageSDK\Config;
-use KickAss\MageSDK\V1\Store\Config as StoreConfig;
+use KickAss\MageSDK\V1\Store as StoreConfig;
 
 /**
  * @covers \KickAss\MageSDK\Models\Store

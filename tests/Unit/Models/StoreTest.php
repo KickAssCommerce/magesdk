@@ -4,7 +4,7 @@ namespace Tests\MageSDK\Api;
 
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Store;
-use KickAss\MageSDK\V1\Store\ConfigInterface;
+use KickAss\MageSDK\V1\StoreInterface;
 
 /**
  * @covers \KickAss\MageSDK\Models\Store
@@ -18,7 +18,7 @@ class StoreTest extends TestCase
 
     public function setUp()
     {
-        $this->store = new Store('default', new Class implements ConfigInterface {
+        $this->store = new Store('default', new Class implements StoreInterface {
             public function getByStoreCode(string $code): \stdClass
             {
                 $object = new \stdClass();

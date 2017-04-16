@@ -50,7 +50,7 @@ class ViewTest extends TestCase
         $this->assertEquals('2016-02-01', $this->productView->getCreatedAt()->format('Y-m-d'));
 
         $this->assertInstanceOf(\DateTime::class, $this->productView->getUpdatedAt());
-        $this->assertEquals('2017-04-15', $this->productView->getUpdatedAt()->format('Y-m-d'));
+        $this->assertEquals((new \DateTime('now'))->format('Y-m-d'), $this->productView->getUpdatedAt()->format('Y-m-d'));
     }
 
 }

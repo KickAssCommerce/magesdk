@@ -2,23 +2,23 @@
 
 namespace KickAss\MageSDK\Models;
 
-use KickAss\MageSDK\V1\Store\ConfigInterface;
+use KickAss\MageSDK\V1\StoreInterface;
 
 class Store
 {
     protected $configuration;
     protected $code;
-    protected $storeConfigApi;
+    protected $storeApi;
 
     /**
      * Store constructor.
      * @param string $code
-     * @param ConfigInterface $storeConfigApi
+     * @param StoreInterface $storeApi
      */
-    public function __construct(string $code, ConfigInterface $storeConfigApi)
+    public function __construct(string $code, StoreInterface $storeApi)
     {
         $this->code = $code;
-        $this->storeConfigApi = $storeConfigApi;
+        $this->storeApi = $storeApi;
     }
 
     /**
@@ -27,7 +27,7 @@ class Store
     public function getFullConfiguration(): \stdClass
     {
         if (!$this->configuration) {
-            $this->configuration = $this->storeConfigApi->getByStoreCode($this->code);
+            $this->configuration = $this->storeApi->getByStoreCode($this->code);
         }
         return $this->configuration;
     }

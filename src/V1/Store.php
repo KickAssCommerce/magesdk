@@ -1,9 +1,8 @@
 <?php
 
-namespace KickAss\MageSDK\V1\Store;
+namespace KickAss\MageSDK\V1;
 
 use KickAss\MageSDK\Api\Client;
-use KickAss\MageSDK\V1\AbstractEndpoint;
 use KickAss\MageSDK\Api\ApiException;
 
 /**
@@ -11,7 +10,7 @@ use KickAss\MageSDK\Api\ApiException;
  *
  * @package KickAss\MageSDK
  */
-class Config extends AbstractEndpoint implements ConfigInterface
+class Store extends AbstractEndpoint implements StoreInterface
 {
     protected $path = 'store/storeConfigs';
 
