@@ -2,6 +2,7 @@
 
 namespace KickAss\MageSDK\Models;
 
+use KickAss\MageSDK\Objects\Directory\CurrencyObjectInterface;
 use KickAss\MageSDK\V1\Directory\CurrencyInterface;
 use KickAss\MageSDK\V1\StoreInterface;
 
@@ -38,6 +39,7 @@ class Store
     }
 
     /**
+     * @param $key
      * @return mixed
      */
     public function getConfigValue($key)
@@ -61,7 +63,11 @@ class Store
         return (string)$this->getConfigValue('code');
     }
 
-    public function getCurrencyInformation()
+    /**
+     * @return CurrencyObjectInterface
+     * @throws \KickAss\MageSDK\Api\ApiException
+     */
+    public function getCurrencyInformation(): CurrencyObjectInterface
     {
         if (!$this->currencyInformation) {
             $this->currencyInformation = $this->currencyApi->getStoreCurrencyInformation();
