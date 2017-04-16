@@ -88,7 +88,7 @@ class View implements ViewInterface
      */
     public function isManageStock():bool
     {
-        return ($this->getStockItemObject()->isUseConfigManageStock()) ?
+        return $this->getStockItemObject()->isUseConfigManageStock() ?
             true : // @todo add call to core_config_data value via StoreModel API
             $this->getStockItemObject()->isManageStock();
     }
@@ -99,7 +99,7 @@ class View implements ViewInterface
      */
     public function isAllowBackorders():bool
     {
-        return ($this->getStockItemObject()->isUseConfigBackorders()) ?
+        return $this->getStockItemObject()->isUseConfigBackorders() ?
             true : // @todo add call to core_config_data value via StoreModel API
             $this->getStockItemObject()->getBackorders();
     }
@@ -110,7 +110,7 @@ class View implements ViewInterface
      */
     public function hasMinimalSalesQty():int
     {
-        return ($this->getStockItemObject()->isUseConfigMinSaleQty()) ?
+        return $this->getStockItemObject()->isUseConfigMinSaleQty() ?
             false : // @todo add call to core_config_data value via StoreModel API
             $this->getStockItemObject()->getMinSaleQty();
     }
