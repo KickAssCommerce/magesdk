@@ -2,6 +2,7 @@
 
 namespace KickAss\MageSDK\Models;
 
+use KickAss\MageSDK\V1\Directory\CurrencyInterface;
 use KickAss\MageSDK\V1\StoreInterface;
 
 class Store
@@ -9,16 +10,20 @@ class Store
     protected $configuration;
     protected $code;
     protected $storeApi;
+    protected $currencyApi;
+    protected $currencyInformation;
 
     /**
      * Store constructor.
      * @param string $code
      * @param StoreInterface $storeApi
+     * @param CurrencyInterface $currencyApi
      */
-    public function __construct(string $code, StoreInterface $storeApi)
+    public function __construct(string $code, StoreInterface $storeApi, CurrencyInterface $currencyApi)
     {
         $this->code = $code;
         $this->storeApi = $storeApi;
+        $this->currencyApi = $currencyApi;
     }
 
     /**
@@ -54,5 +59,13 @@ class Store
     public function getStoreCode()
     {
         return (string)$this->getConfigValue('code');
+    }
+
+    public function getCurrencyInformation()
+    {
+        if (!$this->currencyInformation) {
+            $this->currencyInformation = $this->currencyApi->getStoreCurrencyInformation();
+        }
+        return $this->currencyInformation;
     }
 }
