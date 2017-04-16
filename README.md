@@ -8,7 +8,7 @@ PLEASE NOTE: for now this project is alpha stability, breaking changes might be 
 For now the main focus is on retrieving info
 
 ## Installation
-Install module via composer. Then configure a .env file in the modules root directory within vendor.
+Install module via composer.
 Use the `vendor/bin/magesdk token:admin` tool to create the required API tokens
 
 ## Which APIs are integrated

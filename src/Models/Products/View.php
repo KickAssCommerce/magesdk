@@ -54,6 +54,7 @@ class View implements ViewInterface
 
     /**
      * @return StockItemObjectInterface
+     * @throws \KickAss\MageSDK\Api\ApiException
      */
     public function getStockItemObject(): StockItemObjectInterface
     {
@@ -62,6 +63,7 @@ class View implements ViewInterface
 
     /**
      * @return StockViewInterface
+     * @throws \KickAss\MageSDK\Api\ApiException
      */
     public function getStockModel(): StockViewInterface
     {
