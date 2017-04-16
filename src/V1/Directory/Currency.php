@@ -10,7 +10,7 @@ use KickAss\MageSDK\V1\AbstractEndpoint;
  *
  * @package KickAss\MageSDK
  */
-class Currency extends AbstractEndpoint
+class Currency extends AbstractEndpoint implements CurrencyInterface
 {
     protected $path = 'directory/currency';
 

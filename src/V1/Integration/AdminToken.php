@@ -11,7 +11,7 @@ use KickAss\MageSDK\V1\AbstractEndpoint;
  *
  * @package KickAss\MageSDK
  */
-class AdminToken extends AbstractEndpoint
+class AdminToken extends AbstractEndpoint implements AdminTokenInterface
 {
     protected $path = 'integration/admin/token';
 

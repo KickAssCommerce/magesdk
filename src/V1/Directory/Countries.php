@@ -10,7 +10,7 @@ use KickAss\MageSDK\V1\AbstractEndpoint;
  *
  * @package KickAss\MageSDK
  */
-class Countries extends AbstractEndpoint
+class Countries extends AbstractEndpoint implements CountriesInterface
 {
     protected $path = 'directory/countries';
 

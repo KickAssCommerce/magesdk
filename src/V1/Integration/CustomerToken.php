@@ -11,7 +11,7 @@ use KickAss\MageSDK\V1\AbstractEndpoint;
  *
  * @package KickAss\MageSDK
  */
-class CustomerToken extends AbstractEndpoint
+class CustomerToken extends AbstractEndpoint implements CustomerTokenInterface
 {
     protected $path = 'integration/customer/token';
 
