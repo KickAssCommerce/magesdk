@@ -13,7 +13,7 @@ use KickAss\MageSDK\Api\ApiException;
  *
  * @package KickAss\MageSDK
  */
-class Client
+class Client implements ClientInterface
 {
     /**
      * @var string
