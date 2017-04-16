@@ -1,6 +1,7 @@
 <?php
 
 namespace KickAss\MageSDK\V1\Directory;
+use KickAss\MageSDK\Objects\Directory\CurrencyObjectInterface;
 
 /**
  * Magento V1 directoryCurrencyInformationAcquirerV1 API

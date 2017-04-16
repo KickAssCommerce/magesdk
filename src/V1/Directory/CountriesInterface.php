@@ -3,6 +3,7 @@
 namespace KickAss\MageSDK\V1\Directory;
 
 use KickAss\MageSDK\ConfigInterface;
+use KickAss\MageSDK\Objects\Directory\CountryObjectInterface;
 
 /**
  * Magento V1 directoryCountryInformationAcquirer API

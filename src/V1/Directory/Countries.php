@@ -3,6 +3,8 @@
 namespace KickAss\MageSDK\V1\Directory;
 
 use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\Objects\Directory\CountryObject;
+use KickAss\MageSDK\Objects\Directory\CountryObjectInterface;
 use KickAss\MageSDK\V1\AbstractEndpoint;
 
 /**

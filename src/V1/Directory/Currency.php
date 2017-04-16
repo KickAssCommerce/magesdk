@@ -3,6 +3,8 @@
 namespace KickAss\MageSDK\V1\Directory;
 
 use KickAss\MageSDK\Api\Client;
+use KickAss\MageSDK\Objects\Directory\CurrencyObject;
+use KickAss\MageSDK\Objects\Directory\CurrencyObjectInterface;
 use KickAss\MageSDK\V1\AbstractEndpoint;
 
 /**
