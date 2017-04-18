@@ -2,6 +2,7 @@
 
 namespace Integrations\MageSDK\Api;
 
+use KickAss\MageSDK\V1\Directory\Currency;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Store;
 use KickAss\MageSDK\Config;
@@ -19,7 +20,7 @@ class StoreTest extends TestCase
 
     public function setUp()
     {
-        $this->store = new Store('default', new StoreConfig(new Config()));
+        $this->store = new Store('default', new StoreConfig(new Config()), new Currency(new Config()));
     }
 
     /**

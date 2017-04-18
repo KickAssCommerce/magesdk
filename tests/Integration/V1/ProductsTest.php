@@ -18,6 +18,6 @@ class ProductsTest extends TestCase
     public function testGetBySku()
     {
         $product = new Products(new ConfigMock());
-        $product->getBySku('24-MB01');
+        $product->getBySku('24-MB01', 0, false, false);
     }
 }

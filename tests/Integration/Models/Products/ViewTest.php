@@ -2,6 +2,7 @@
 
 namespace Integrations\MageSDK\Api;
 
+use KickAss\MageSDK\V1\Products;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Products\View as ProductView;
 use KickAss\MageSDK\Config;
@@ -18,7 +19,7 @@ class ViewTest extends TestCase
 
     public function setUp()
     {
-        $this->product = new ProductView('24-MB01', 0, new Config());
+        $this->product = new ProductView('24-MB01', 0, new Products(new Config()), new Config());
     }
 
     /**

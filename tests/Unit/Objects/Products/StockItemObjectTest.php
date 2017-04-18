@@ -18,9 +18,36 @@ class StockItemObjectTest extends TestCase
 
     public function setUp()
     {
-        $product = new ProductApiMock();
+        $productApiData = new ProductApiMock();
 
-        $this->stock = new StockItemObject($product->extension_attributes->stock_item);
+        $this->stock = new StockItemObject(
+            $productApiData->extension_attributes->stock_item->item_id,
+            $productApiData->extension_attributes->stock_item->product_id,
+            $productApiData->extension_attributes->stock_item->stock_id,
+            $productApiData->extension_attributes->stock_item->qty,
+            $productApiData->extension_attributes->stock_item->min_qty,
+            $productApiData->extension_attributes->stock_item->min_sale_qty,
+            $productApiData->extension_attributes->stock_item->max_sale_qty,
+            $productApiData->extension_attributes->stock_item->is_in_stock,
+            $productApiData->extension_attributes->stock_item->is_qty_decimal,
+            $productApiData->extension_attributes->stock_item->show_default_notification_message,
+            $productApiData->extension_attributes->stock_item->use_config_min_qty,
+            $productApiData->extension_attributes->stock_item->use_config_min_sale_qty,
+            $productApiData->extension_attributes->stock_item->use_config_max_sale_qty,
+            $productApiData->extension_attributes->stock_item->use_config_backorders,
+            $productApiData->extension_attributes->stock_item->backorders,
+            $productApiData->extension_attributes->stock_item->use_config_notify_stock_qty,
+            $productApiData->extension_attributes->stock_item->notify_stock_qty,
+            $productApiData->extension_attributes->stock_item->qty_increments,
+            $productApiData->extension_attributes->stock_item->use_config_enable_qty_inc,
+            $productApiData->extension_attributes->stock_item->enable_qty_increments,
+            $productApiData->extension_attributes->stock_item->manage_stock,
+            $productApiData->extension_attributes->stock_item->use_config_manage_stock,
+            $productApiData->extension_attributes->stock_item->low_stock_date,
+            $productApiData->extension_attributes->stock_item->is_decimal_divided,
+            $productApiData->extension_attributes->stock_item->stock_status_changed_auto,
+            []
+        );
     }
 
     /**
@@ -28,8 +55,7 @@ class StockItemObjectTest extends TestCase
      */
     public function testStockDate()
     {
-        $this->assertInstanceOf(\DateTime::class, $this->stock->getLowStockDate());
-        $this->assertEquals((New \DateTime('now'))->format('Y-m-d'), $this->stock->getLowStockDate()->format('Y-m-d'));
+        $this->assertEquals((New \DateTime('now'))->format('Y-m-d'), $this->stock->getLowStockDate());
     }
 
     /**
@@ -49,13 +75,13 @@ class StockItemObjectTest extends TestCase
     }
 
     /**
-     * @covers \KickAss\MageSDK\Objects\Products\StockItemObject::getId()
+     * @covers \KickAss\MageSDK\Objects\Products\StockItemObject::getItemId()
      * @covers \KickAss\MageSDK\Objects\Products\StockItemObject::getProductId()
      * @covers \KickAss\MageSDK\Objects\Products\StockItemObject::getStockId()
      */
     public function testGetIds()
     {
-        $this->assertEquals(3, $this->stock->getId());
+        $this->assertEquals(3, $this->stock->getItemId());
         $this->assertEquals(2, $this->stock->getProductId());
         $this->assertEquals(1, $this->stock->getStockId());
     }

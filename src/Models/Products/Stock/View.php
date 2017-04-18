@@ -5,6 +5,7 @@ namespace KickAss\MageSDK\Models\Products\Stock;
 use KickAss\MageSDK\ConfigInterface;
 use KickAss\MageSDK\Models\Store;
 use KickAss\MageSDK\Objects\Products\StockItemObjectInterface;
+use KickAss\MageSDK\V1\Directory\Currency;
 use KickAss\MageSDK\V1\Store as StoreConfig;
 
 class View implements ViewInterface
@@ -22,7 +23,7 @@ class View implements ViewInterface
     {
         $this->stockItemObject = $stockItemObject;
         $this->config = $config;
-        $this->store = new Store($this->config->getApiStoreCode(), new StoreConfig($this->config));
+        $this->store = new Store($this->config->getApiStoreCode(), new StoreConfig($this->config), new Currency($this->config));
     }
 
     /**

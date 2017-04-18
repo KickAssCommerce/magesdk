@@ -2,8 +2,11 @@
 
 namespace Tests\MageSDK\Api;
 
+use KickAss\MageSDK\Objects\Directory\CurrencyObject;
+use KickAss\MageSDK\V1\Directory\Currency;
 use PHPUnit\Framework\TestCase;
 use KickAss\MageSDK\Models\Store;
+use KickAss\MageSDK\V1\Store as StoreApi;
 use KickAss\MageSDK\V1\StoreInterface;
 
 /**
@@ -18,16 +21,37 @@ class StoreTest extends TestCase
 
     public function setUp()
     {
-        $this->store = new Store('default', new Class implements StoreInterface {
-            public function getByStoreCode(string $code): \stdClass
-            {
-                $object = new \stdClass();
-                $object->id = 1;
-                $object->code = 'default';
-                $object->locale = 'en_US';
-                return $object;
-            }
-        });
+        $currency = $this->getMockBuilder(Currency::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $currency->method('getStoreCurrencyInformation')
+            ->willReturn(new CurrencyObject((object)[
+                'base_currency_code' => 'EUR',
+                'base_currency_symbol' => 'E',
+                'default_display_currency_code' => 'EUR',
+                'default_display_currency_symbol' => 'E',
+                'available_currency_codes' => [
+                    'EUR'
+                ],
+                'exchange_rates' => [(object)[
+                    'currency_to' => 'EUR',
+                    'rate' => 0,
+                    'extension_attributes' => []
+                ]],
+                'extension_attributes' => []
+            ]));
+
+        $store = $this->getMockBuilder(StoreApi::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $store->method('getByStoreCode')
+            ->willReturn((object)[
+                'id' => 1,
+                'code' => 'default',
+                'locale' => 'en_US',
+            ]);
+
+        $this->store = new Store('default', $store, $currency);
     }
 
     /**
